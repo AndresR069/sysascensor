@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HojaMantenimieno</title>
+  <link rel="shortcut icon" href="/img/strava.svg">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/hojaAs.css">
+  <script src="/js/dahstec.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">DashTec</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mantenimiento</a>
+      </li>
+    </ul>
+  
+  <div>
+    <a href="/indexTec"><span class="bi bi-box-arrow-right"></span><span></span></a>
+  </div>
+  </div>
+
+
+</nav>
+
+<!---->
+
+<div class="content">
+
+        <section class="form_wrap">
+    
+            <section class="cantact_info">
+                <section class="info_title">
+                    <span class="bi bi-person-video3"></span>
+                    <h2>Tecnico<br>Julian Alvarez </h2>
+                </section>
+                <section class="info_items">
+                    <p><span class="bi bi-geo-alt"></span> CONJUNTO RESIDENCIA TAL <br> Sector: Tal </p>
+                </section>
+            </section>
+    
+            <form action="" class="form_contact">
+                <h2>Bitacorá de Mantenimiento Ascensor:</h2>
+                <div class="user_info">
+
+                    <!--FECHAS DEL REPORTE-->
+                    <div class="row">
+                        <div class="col">
+                            <label for="names">Fecha:</label>
+                            <input type="text" id="names" placeholder="18/06/2022">
+                        </div>
+                        <div class="col">
+                            <label for="phone">No Reporte:</label>
+                            <input type="text" id="phone" placeholder="1">
+                        </div>
+                      </div>
+                      <!--DATOS DEL CONJUNTO-->
+                      <h5> <b> Datos Conjunto Residencial: </b></h5>
+                      <hr>
+                      <br>
+                      <div class="row">
+                        <div class="col">
+                            <label for="names">Nombre Conjunto:</label>
+                            <input type="text" id="names" placeholder="CONJUNTO RESIDENCIAL TAL">
+                        </div>
+                        <div class="col">
+                            <label for="phone">Dirección:</label>
+                            <input type="text" id="phone" placeholder="CARRAR 22 # 20 - 2">
+                        </div>
+                      </div>
+                      <!--DATOS DEL TECNICO-->
+                      <h5><b>Datos Tecnico Encargado:</b></h5>
+                      <hr>
+    
+                      <br>
+                      <div class="row">
+                        <div class="col">
+                            <label for="names">Nombre Tecnico:</label>
+                            <input type="text" id="names" placeholder="Julian Alvarez">
+                        </div>
+                        <div class="col">
+                            <label for="phone">Telefono:</label>
+                            <input type="text" id="phone" placeholder="3050653233">
+                        </div>
+                      </div>
+                      <!--DESCRIPCIÓN DEL ASCENSOR-->
+                      <h5><b>Descripción del ascensor:</b></h5>
+                      <hr>
+                      
+                      <br>
+                      <div class="row">
+                        <div class="col">
+                            <label for="names">No. Ascensor</label>
+                            <input type="text" id="names" placeholder="j1234">
+                        </div>
+                        <div class="col">
+                            <label for="phone">Modelo:</label>
+                            <input type="text" id="phone" placeholder="QWERT1234">
+                        </div>
+                      </div>
+                      <br>
+                      <label for="phone">Descripción Detallada del equipo:</label>
+                      <textarea name="" id="" cols="20" rows="10"></textarea>
+                      
+                      <!--MANTENIMIENTO PREVENTIVO-->
+
+                      <h5><b>Mantenimiento preventivo:</b> </h5>
+                      <hr>
+                      <br>
+                      <div class="row">
+                        <div class="col">
+                            <label for="names">Revisión 1:</label>
+                            <input type="text" id="names" placeholder="1">
+                        </div>
+                        <div class="col">
+                            <label for="phone">Revisión 2:</label>
+                            <input type="text" id="phone" placeholder="2">
+                        </div>
+                        <div class="col">
+                            <label for="phone">Revisión 3:</label>
+                            <input type="text" id="phone" placeholder="3">
+                        </div>
+                      </div>
+
+                      <!--MANTENIMINETO CORRECTIVO -->
+
+                      <h5><b>Mantenimiento correctivo: </b></h5>
+                      <hr>
+
+                    <label for="email">Observación / Fallo:</label>
+                    <textarea id="mensaje" cols="20" rows="10" ></textarea>
+            
+                    <label>Situación del mantenimiento:</label>
+                    <select name="Ubicacion" class="form-control">
+                        <option value="C01">Seleccione:</option>
+                        <option value="C02">ARREGLADO EXITOSAMENTE</option>
+                        <option value="C03">NO SE PUEDE ARREGLAR</option>
+                        <option value="C04">POSPONER MANTENIMINETO</option>
+                    </select>                    
+                    <br>
+
+                    <label for="names">Nombre Tecnico Encargado:</label>
+                    <input type="text" id="names" placeholder="Julian Alvarez">
+                    <br>
+                    <a href="#"><input type="button" value="Enviar Estado" id="btnSend"></a>
+                    
+                </div>
+            </form>
+    
+        </section>
+
+      
+<!--
+<script>
+    Swal.fire({
+    position: 'top',
+    icon: 'success',
+    title: 'Se ha enviado exisotasemente su notificación',
+    showConfirmButton: false,
+    timer: 1700
+  })
+</script>
+-->
+
+
+</div>
+
+<!--Alertas
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/sweetAlert.js"></script>
+-->
+</body>
+</html>

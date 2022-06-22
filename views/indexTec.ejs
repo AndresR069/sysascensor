@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashTecnico</title>
+    <link rel="shortcut icon" href="/img/strava.svg">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/dashtec.css">
+</head>     
+<body>
+    
+<!-- partial:index.partial.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">DashTecnicos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu</a>
+        </li>
+      </ul>
+      <a href="/login"><span class="bi bi-box-arrow-right"></span><span></span></a>
+    </div>
+    </div>
+  
+  
+  </nav>
+  
+  <!---->
+  
+  <div class="content">
+  
+  <!-- TABLE TAREAS -->
+  <table id="table-tareas">
+          <tr>
+        <td class="title" colspan="7"><img class="icon" src="https://juangallegosn.github.io/images/icon-tareas.svg">
+          <h1>Tareas Tecnico</h1>
+        </td>
+          </tr>
+          <tr>
+              <th>ID. Tarea</th>
+              <th>Fecha</th>
+              <th>Cliente-Conjunto</th>
+        <th>Estado</th>
+        <th>Obeservaciones</th>
+        <th>Delegado</th>
+        <th>Proceso</th>
+  
+  
+          </tr>
+          <tr>
+        <td>1</td>
+              <td>17/06/2022</td>
+              <td>CONJUNTO RESIDENCIAL TAL</a></td>
+              <td>
+          <span class="badge badge-danger">Por Definir</span></td>
+        </td>
+        <td>Hacer mantenimiento de la puerta del ascensor 1</td>
+        <td>Administrador</td>
+        <td>
+          <a href="/hojamanten" class="edit" data-toggle="modal"><button type="button" class="btn btn-success">Aceptar</button></a>
+          <!--<button type="button" class="btn btn-success">Aceptar</button>-->
+          <button type="button" class="btn btn-danger">Rechazar</button>
+        </td>
+          </tr>
+      <tr>
+        <td>2</td>
+              <td>17/06/2022</td>
+              <td>CONJUNTO RESIDENCIAL TAL</a></td>
+        <td>
+          <span class="badge badge-primary">En curso</span>
+        </td>
+              <td>Hacer mantenimiento de la puerta del ascensor 1</td>
+        <td>Administrador</td>
+        <td>
+          <a href="/hojamanten" class="edit" data-toggle="modal"><button type="button" class="btn btn-success">Aceptar</button></a>
+          <!--<button type="button" class="btn btn-success">Aceptar</button>-->
+          <button type="button" class="btn btn-danger">Rechazar</button>
+        </td>
+          </tr>
+      <tr>
+        <td>3</td>
+              <td>17/06/2022</td>
+              <td>CONJUNTO RESIDENCIAL TAL</a></td>
+        <td> 
+          <span class="badge badge-success">Finalizado</span>
+        </td>
+              <td>Hacer mantenimiento de la puerta del ascensor 1</td>
+        <td>Administrador</td>
+        <td>
+          <a href="/hojamanten" class="edit" data-toggle="modal"><button type="button" class="btn btn-success">Aceptar</button></a>
+          <!--<button type="button" class="btn btn-success">Aceptar</button>-->
+          <button type="button" class="btn btn-danger">Rechazar</button>
+        </td>
+          </tr>
+  </table>
+  <!--
+  <div id="Cards">
+  
+        TAREAS 
+        <section id="card-tareas">
+          <div id="card-tareas-left" style="background-color: #4bc076;"><img src="https://juangallegosn.github.io/images/icon-tareas.svg"></div>
+          <div id="card-tareas-right">
+            <h2>Tareas</h2>
+            <h1 style="color: #4bc076;">1</h1><h3 style="color: #4bc076;">/3</h3>
+            <small>Avance</small>
+            <div id="progress-bar-tareas"></div><data>9%</data>
+          </div>
+        </section>
+  
+  </div>
+  
+  -->
+  
+    <script>
+      Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Aceptar',
+      showConfirmButton: false,
+      timer: 1700
+    })
+  </script>
+  
+  
+  </div>
+  <!--Alertas-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/sweetAlert.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,215 @@
+/** Estrutura Grid System */
+
+/* Calculando a largura dos grids */
+.col-1 {
+  width: calc(8.33333%*1);
+}
+
+.col-2 {
+  width: calc(8.33333%*2);
+}
+.col-3 {
+  width: calc(8.33333%*3);
+}
+
+.col-4 {
+  width: calc(8.33333%*4);
+}
+.col-5 {
+  width: calc(8.33333%*5);
+}
+.col-6 {
+  width: calc(8.33333%*6);
+}
+.col-7 {
+  width: calc(8.33333%*7);
+}
+
+.col-8 {
+  width: calc(8.33333%*8);
+}
+
+.col-9 {
+  width: calc(8.33333%*9);
+}
+.col-10 {
+  width: calc(8.33333%*10);
+}
+.col-11 {
+  width: calc(8.33333%*11);
+}
+.col-12 {
+  width: calc(8.33333%*12);
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.row [class*="col-"] {
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 1em;
+}
+
+/* Final Grid System */
+/* Style do projeto Digicade app */
+html {
+  background: white;
+  font-size: 1rem;
+}
+
+body {
+  font-family: "simplonbp-light", Helvetica, sans-serif;
+  display: block;
+  background: white;
+  margin: 0 auto;
+  padding-top: 70px;
+  line-height: 1.45;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+hr {
+width: 100%; /* Length */
+height: 1px; /* Thickness */
+color: #000; /* Colour */
+background-color: #000; /* Colour */
+}
+
+h2 {
+  font-size: 20px;
+  color: grey;
+  font-family: "simplonbp-light", arial;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.563rem;
+  color: #3d3c46;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+  color: #666666;
+}
+
+a {
+  color: #db5051;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.top-nav {
+  height: 70px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: solid 1px #edebe6;
+  z-index: 99;
+  background: #a11d29;
+  padding: 0 2rem;
+}
+.top-nav .brand, .top-nav ul li a {
+  height: 40px;
+  line-height: 75px;
+  padding-top: 12px;
+  float: left;
+}
+.top-nav ul {
+  display: block;
+  text-align: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.top-nav ul li {
+  display: inline-block;
+}
+.top-nav ul li a {
+  display: inline-block;
+  padding: 0 2rem;
+  color: black;
+}
+.top-nav ul li a:hover {
+  color: #db5051;
+}
+
+
+/*+++++   MAPA*/
+
+#map {
+  height: 800px;
+  width: 100%;
+}
+
+
+ #tblList thead{
+   background: grey;
+   color: #FFF;
+ }
+/* = Borders */
+.border {
+  border: solid 1px #edebe6;
+}
+
+.border-left {
+  border-left: solid 1px #edebe6;
+}
+
+.border-right {
+  border-right: solid 1px #edebe6;
+}
+
+.border-top {
+  border-top: solid 1px #edebe6;
+}
+
+.border-bottom {
+  border-bottom: solid 1px #edebe6;
+}
+
+/* = Grid ends here */
+/* = UI Components */
+/*Forms */
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #d2d2d2;
+    font-size: 14px;
+
+
+}
+
+.input-wrap {
+  margin-bottom: 2rem;
+}
+
+
+
+label {
+  font-size: 16px;
+  font-family: "arial";
+}
+

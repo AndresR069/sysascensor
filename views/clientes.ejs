@@ -1,0 +1,91 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>Ubicación Clientes</title>
+    <link rel="shortcut icon" href="/img/strava.svg">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+          <style>
+          body { margin: 0; padding: 0; }
+          #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+          #map {
+              position: fixed;
+              width: 50%;
+              }
+              #features {
+              width: 50%;
+              margin-left: 50%;
+              font-family: sans-serif;
+              overflow-y: scroll;
+              background-color: #fafafa;
+              }
+              section {
+              padding: 25px 50px;
+              line-height: 25px;
+              border-bottom: 1px solid #ddd;
+              opacity: 0.25;
+              font-size: 13px;
+              }
+              section.active {
+              opacity: 1;
+              }
+              section:last-child {
+              border-bottom: none;
+              margin-bottom: 200px;
+              }
+
+          </style>
+
+</head>
+<body>
+
+<div id="map"></div>
+      <div id="features">
+          <section id="1" class="active">
+                  <h3>MULTIFAMILIAR MIRADOR DE KATALEY</h3>
+                      <h4>Direccion: CRA 5 #19-72 </h4>
+                          <p>
+                            Observación: Inspeccion de ascensor por variaciones en el fluido electrico
+                          </p>
+          </section>
+          <section id="2">
+                  <h3>CON JUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2</h3>
+                      <h4>Direccion:: CALLE 23 #64A - 72 </h4>
+                          <p>
+                            Observación: Por constantes picos en el fluido electrico fue necesario reemplazar fuente de 24 voltios en la torre 1, 
+                              en la torre 2 se reemplazaron 2 (dos) inductores de 24 voltios ya que el ascensor no paraba en los pisos indicados 
+                          </p>
+          </section>
+          <section id="3">
+                  <h3>CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3</h3>
+                      <h4>Direccion: CALLE 21 #64A - 80</h4>
+                          <p>
+                            Observación: Fue necesario instalar un ARD (sistema de rescate de emergencia) por los multiples cortes de energia.
+                          </p>
+          </section>
+          <section id="4">
+                  <h3>WCONJUNTO LAS HELICONIAS</h3>
+                      <h4>Direccion: CRA 62 #19 - 44 </h4>
+                          <p>
+                            Observación: Para la eliminacion de ruidos en el cierre y apertura de las puertas de cabina fue necesario cambiar los rodamientos del motor de este operador de puertas.
+                          </p>
+          </section>
+          <section id="5">
+                  <h3>CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1</h3>
+                      <h4>Direccion: CALLE 22A #13 - 119 </h4>
+                        <p>Torre A: Cambio de retenedor por fugas de aceite lubricante del motor.</p>
+                        <p>Torre B: Reparacion de limitador de velocidad por tiempo de uso</p>
+                        <p>Torre C:instalacion de bateria de emergencia nueva de 24 voltios. </p>
+          </section>
+          <section id="6">
+            <a href="/index" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> <span>SALIR</span></a>
+          </section>
+        </div>
+        
+<script src="/js/map.js"></script>
+</body>
+</html>

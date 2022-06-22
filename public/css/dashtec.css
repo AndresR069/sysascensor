@@ -1,0 +1,296 @@
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+    margin-bottom:1rem;
+  }
+  
+  .navbar .dropdown-menu {
+   border:none;
+   background-color:#0060c8!important;
+  }
+  
+  /* breakpoint and up - mega dropdown styles */
+  @media screen and (min-width: 992px) {
+   
+   /* remove the padding from the navbar so the dropdown hover state is not broken */
+  .navbar {
+   padding-top:0px;
+   padding-bottom:0px;
+  }
+  
+  .navbar a{
+    color: white;
+  }
+  
+  /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+  .navbar .nav-item {
+   padding:.5rem .5rem;
+   margin:0 .25rem;
+  }
+  
+  /* makes the dropdown full width  */
+  .navbar .dropdown {position:static;}
+  
+  .navbar .dropdown-menu {
+   width:100%;
+   left:0;
+   right:0;
+  /*  height of nav-item  */
+   top:45px;
+   display:block;
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0s, opacity 0.3s linear;
+   color: white;
+   
+  }
+   
+  }
+  
+  
+  /*PARTE CONTENIDO */
+  
+  
+  @font-face {
+    font-family: Salesforce Sans;
+    src: url(https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts//SalesforceSans-Regular.woff2)
+        format("woff2"),
+      url(https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts//SalesforceSans-Regular.woff)
+        format("woff");
+    font-display: swap;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: Salesforce Sans;
+    src: url(https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts//SalesforceSans-Bold.woff2)
+        format("woff2"),
+      url(https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts//SalesforceSans-Bold.woff)
+        format("woff");
+    font-display: swap;
+    font-weight: 700;
+  }
+  
+  /* COUNTER */
+  #counter {
+    align-items: center;
+    background: linear-gradient(90deg, rgba(205,233,254,1) 0%, rgba(103,181,250,1) 100%);
+    border-radius: 4px;
+    display: flex;
+    font-family: Salesforce Sans;
+    height: 72px;
+    width: 464px;
+  }
+  #counter .icon {
+    margin-left: 16px;
+  }
+  #counter h1 {
+    color: #2b4773;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  #counter ul {
+    list-style: none;
+    margin: 0 16px 0 auto;
+    text-align: center;
+  }
+  #counter li {
+    background-color: #006dcc;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 5px;
+    width: 54px;
+  }
+  #counter data {
+    color: #fff;
+    display: block;
+    font-size: 26px;
+  }
+  #counter small {
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    color: #347fdb;
+    display: block;
+    font-size: 10px;
+    padding: 2px 0;
+    text-transform: uppercase;
+  }
+  
+  /* TABLE */
+  
+  #table-oportunidades, #table-tareas {
+    border: 1px solid #dddbda;
+    border-collapse: collapse;
+    font-family: Salesforce Sans;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  #table-oportunidades .title, #table-tareas .title {
+    background-color: #f3f2f2;
+    padding: 15px 0 15px 14px;
+  }
+  #table-oportunidades h1, #table-tareas h1 {
+    color: #080707;
+    display: inline;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  #table-oportunidades th, #table-tareas th {
+    border-bottom: 1px solid #dddbda;
+    color: #514f4d;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 12px 0 12px 14px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  #table-oportunidades tr:nth-child(even), #table-tareas tr:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+  #table-oportunidades td, #table-tareas td {
+    border-bottom: 1px solid #dddbda;
+    color: #080707;
+    font-size: 11px;
+    padding: 12px 12px 12px 14px;
+    width: 2%;
+  }
+  #table-oportunidades .icon, #table-tareas .icon {
+    vertical-align: middle;
+  }
+  #table-oportunidades .tag, #table-tareas .tag {
+    background-color: #acb1c0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    padding: 3px 13px;
+  }
+  #table-oportunidades a, #table-tareas a {
+    color: #006dcc;
+    text-decoration: none;
+  }
+  #table-oportunidades a:hover, #table-tareas a:hover {
+    text-decoration: underline;
+  }
+  #table-oportunidades ul, #table-tareas ul {
+    list-style: none;
+    margin-right: 16px;
+    padding: 0;
+    text-align: right;
+  }
+  #table-oportunidades li, #table-tareas li {
+    display: inline;
+    margin-left: 2px;
+  }
+  #table-oportunidades li a, #table-tareas li a {
+    background-color: #f9f9f9;
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    padding: 6px 10px;
+    text-decoration: none;
+  }
+  #table-oportunidades li a:hover, #table-tareas li a:hover {
+    background-color: #efefef;
+    color: #9b9b9b;
+    text-decoration: none;
+  }
+  
+  /* RESUMEN DE GRUPO */
+  
+  
+  #card-clientes-planificados, #card-acciones-totales, #card-oportunidades, #card-tareas {
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    display: inline-block;
+    height: 100px;
+    margin: 20px 10px 0 0;
+    width: 210px;
+    
+  }
+  #card-clientes-planificados-left, #card-acciones-totales-left, #card-oportunidades-left, #card-tareas-left {
+    border-radius: 4px 0 0 4px;
+    display: table-cell;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    width: 42px;
+  }
+  #card-clientes-planificados-right, #card-acciones-totales-right, #card-oportunidades-right, #card-tareas-right {
+    box-sizing: border-box;
+    display: table-cell;
+    font-family: Salesforce Sans;
+    height: 100px;
+    padding: 0 0 10px 10px;
+    position: relative;
+    vertical-align: bottom;
+    width: 168px;
+  }
+  #card-clientes-planificados-right h1, #card-acciones-totales-right h1, #card-oportunidades-right h1, #card-tareas-right h1 {
+    display: inline;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+  #card-clientes-planificados-right h2, #card-acciones-totales-right h2, #card-oportunidades-right h2, #card-tareas-right h2 {
+    color: #2b4773;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    margin: 0;
+  }
+  #card-clientes-planificados-right h3, #card-acciones-totales-right h3, #card-oportunidades-right h3, #card-tareas-right h3 {
+    display: inline;
+    font-size: 12px;
+    margin: 0;
+  }
+  #card-clientes-planificados-right small, #card-acciones-totales-right small, #card-oportunidades-right small, #card-tareas-right small {
+    color: #514f4d;
+    font-size: 9px;
+    display: block;
+    line-height: 10px;
+    margin: 0 0 4px 0;
+  }
+  #card-clientes-planificados-right data, #card-acciones-totales-right data, #card-oportunidades-right data, #card-tareas-right data {
+    bottom: 8px;
+    color: #16325c;
+    font-size: 9px;
+    line-height: 10px;
+    margin: 0;
+    position: absolute;
+    left: 134px;
+    text-align: left;
+  }
+  /* CLIENTES PLANIFICADOS PROGRESS BAR */
+  #card-clientes-planificados-right #progress-bar-clientes-planificados {
+    background-color: #ebf7fe;
+    border-radius: 10px;
+    height: 5px;
+    width: 120px;
+  }
+  #card-clientes-planificados-right #progress-bar-clientes-planificados::after {
+    background-color: #7f8ce1;
+    border-radius: 10px;
+    content: '';
+    display: block;
+    height: 5px;
+    width: 50px;
+  }
+  
+  /* TAREAS PROGRESS BAR */
+  #card-tareas-right #progress-bar-tareas {
+    background-color: #ebf7fe;
+    border-radius: 10px;
+    height: 5px;
+    width: 120px;
+  }
+  #card-tareas-right #progress-bar-tareas::after {
+    background-color: #4bc076;
+    border-radius: 10px;
+    content: '';
+    display: block;
+    height: 5px;
+    width: 9px;
+  }
+  

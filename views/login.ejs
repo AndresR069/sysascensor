@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estyle_log.css" />
+    <link rel="shortcut icon" href="/img/strava.svg">
+
+    <title>Log</title>
+  </head>
+  <body>
+    <!--<h1>SYSTEMS ASCESOR FUSA</h1>-->
+    <br>
+    <br>
+    <div class="container" id="container">
+      <div class="form-container sign-in-container">
+        <form id="formLogin" action="/login" method="POST">
+          <h1>Iniciar Sesión</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>Usa tu correo</span>
+          <input
+            type="text"
+            class="form-control"
+            id="user"
+            name="user"
+            placeholder="User"
+          />
+          <input
+            type="password"
+            class="form-control"
+            id="pass"
+            name="pass"
+            placeholder="Password"
+          />
+          <a href="#">¿Olvidaste tu contraseña?</a>
+          <button class="w-50 btn btn-lg btn-primary" type="submit">
+            Login
+          </button>
+          <a href="/indexTec" >LOGIN TECNICO</a>
+          <a href="/dashAdmiAs" >LOGIN USERADMIN</a>
+          <!--<a href="/register" type="button" class="w-100 btn btn-lg btn-bd-primary"
+            >Resgistrarse</a
+          >-->
+
+
+          <!--<a href="dashboard.html"><span>Entrar</span></a>
+			<a href="dashboard.html"><button>Entrar</button></a>-->
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <h1>¡Sistema de notificaciones!</h1>
+            <p>Alertas, fallas y mantenimiento de los ascensores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!--llamada a switalert-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <% if(alert) { %>
+        <script>
+          Swal.fire({
+              title: '<%= alertTitle %>',
+              text: '<%= alertMessage %>',
+              icon: '<%= alertIcon %>',
+              showConfirmButton: '<%= showConfirmButton%>',
+              timer: '<%= timer %>'
+          }).then(()=>{
+          window.location='/<%= ruta %>'
+          })
+        </script>
+        <% } %>
+  </body>
+</html>
