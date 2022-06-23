@@ -7,18 +7,6 @@ const crud = require('../controllers/crud');
 //constante para definir el controlador
 const authControllers=require('../controllers/authController')
 //router para las vistas
-router.get("/", (req, res) => {
- 
-    conexion.query('select ubicacion_elevador.id_ubicacion, ubicacion_elevador.can_ascensores, ubicacion_elevador.nombre_lugar, ubicacion_elevador.direccion, asignacion_tarea.falla from ubicacion_elevador INNER JOIN asignacion_tarea ON asignacion_tarea.id_ubicacion = ubicacion_elevador.id_ubicacion INNER JOIN sector_fusa ON sector_fusa.id_sector = ubicacion_elevador.id_sector',(error, result)=>{
-      if(error){
-          throw error;
-      } else {                       
-          res.render('index', {user:req.user,result:result});       //le pasamos el user al index      
-      }   
-  })
-/*res.render('/index',{user:req.user});*/  
-});
-
 
 router.get("/login", (req, res) => {
   res.render("login",{alert:false});
