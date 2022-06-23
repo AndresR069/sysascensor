@@ -50,56 +50,29 @@
                 <th>Email</th>
                 <th>Direccion</th>
                 <th>Telefono</th>
-             
-                <th>Contraseña</th>
+          
                 <th>Rol</th>
-                <th>Estado de Logueo</th>
+                <th>Conectado Actualmente</th>
                 <th>Acción</th>
               </tr>
             </thead>
             <tbody>
-
-              <td>juan</td>
-              <td>rodriguez</td>
-              <td>haloblue08@gmail.com</td>
-              <td>calle 2#1-56-sur</td>
-              <td>3001230033</td>
-            
-              <td>sdajsdkasjdkasdjasdk</td>
-              <td>tecnico</td>
-              <td>true</td>
+              <% result.forEach((persona)=>{ %>
+                <tr>
+                  <td style="display: none;"><%= persona.id_persona %></td>
+                  <td><%= persona.nombres %></td>
+                  <td><%= persona.apellidos %></td>
+                  <td><%= persona.correo %></td>
+                  <td><%= persona.direccion %></td>
+                  <td><%= persona.telefono %></td>
+                  <td><%= persona.nombre_rol %></td>
+                  <td><%= persona.estado_logeo %></td>
               <td>
                 <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                <a type="button" class="btnDelete btn btn-outline-primary bi bi-">delete</a>
               </td>
-
-              <!--
-              <% result.forEach((tecnico)=>{ %>
-              <tr>
-                <td style="display: none;"><%= tecnico.id_tecnico %></td> El id no se mostrara per estara por debajo del codigo
-                <td><%= tecnico.nombre_tecnico %></td>
-                <td><%= tecnico.correo_tecnico %></td>
-                <td><%= tecnico.telefono %></td>
-                <td>
-                -->
-                  <!--<a id="btnEditar" href="#editmodal" class="btnEditar btn btn-primary" data-toggle="modal" role="button"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								
-
-                  
-				        <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
-                  <a href="/delete/<%= tecnico.id_tecnico %>" class="delete"
-                    ><i
-                      class="material-icons"
-                      data-toggle="tooltip"
-                      title="Delete"
-                      >&#xE872;</i
-                    ></a
-                  >
-                </td>
-              </tr>
-              <% }) %>
-            -->
-            </tr>
+                </tr>
+                <% }) %>   
             </tbody>
           </table>
         </div>
@@ -110,96 +83,100 @@
     <div id="addEmployeeModal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form>
+          <form action="/register" method="POST">
             <div class="modal-header">
-              <h4 class="modal-title">Agregar Nueva tarea</h4>
+              <h4 class="modal-title">Agregar Nuevo Usuario</h4>
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
                   <div class="modal-body">
                       <div class="form-group">
                       <label>Nombres</label>
-                      <textarea class="form-control" placeholder="Nombres"></textarea>
+                      <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
                     </div>
                     <div class="form-group">
                       <label>Apellidos</label>
-                      <input type="text" class="form-control" placeholder="Apellidos">
+                      <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
                     </div>
                       <div class="form-group">
                       <label>Correo</label>
-                      <input type="text" class="form-control" placeholder="Email">
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
                       <div class="form-group">
                       <label>Direccion</label>
-                      <input type="text"
-                        class="form-control"
-                        id="direccion"
-                        name="direccion"
-                        required
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label>Email</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="correo_tecnico"
-                        name="correo_tecnico"
-                        required
-                      />
+                      <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Direccion" required/>
                     </div>
                     <div class="form-group">
                       <label>Telefono</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="telefono"
-                        name="telefono"
-                        required
-                      />
+                      <input type="tel" class="form-control" id="telefono" name="telefono"  placeholder="(+57)" required/>
                     </div>
-                  
-                      <!--
-                      <select name="Ubicacion" class="form-control">
-                          <option value="C01">Seleccione:</option>
-                          <option value="C02">MULTIFAMILIAR MIRADOR DE KATALEYA</option>
-                          <option value="C03">TORRES DE BALMORAL</option>
-                          <option value="C04">CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2</option>
-                          <option value="C05">CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3</option>
-                          <option value="C06">MULTIFAMILIAR ARAUCARIA</option>
-                          <option value="C07">CONJUNTO CERRADO URBANIZACION BRISAS DE MIRAMONTE</option>
-                          <option value="C08">LAS HELICONIAS</option>
-                          <option value="C09">CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1 </option>
-                          <option value="C10">MULTIFAMILIARES EL PORTAL DE LA PAMPA V.I.S.</option>
-                          <option value="C11">MULTIFANILIAR VILLA LAURA</option>
-                          <option value="C12">KADY</option>
-
-                      </select>
-                      -->
-                      <!--
-                      </div>
-                      <div class="form-group">
-                      <label>Tipo de Corrección</label>
-                      <select name="Tipo " class="form-control">
-                          <option value="C01">Seleccione:</option>
-                          <option value="C02">Correctivo</option>
-                          <option value="C03">Preventivo</option>
-                      </select>
-                     </div>
-                     -->
-          
-                  <div class="form-group">
+                    <div class="form-group">
+                      <label>Contraseña</label>
+                      <input type="password" class="form-control" id="password" name="password"  placeholder="****" required/>
+                    </div>
+                    <div class="form-group">
                       <label>Rol</label>
-                      <select name="Tipo " class="form-control">
+                      <select id="rol" name="rol" class="form-control">
                        
-                        <option value="C02">tecnico</option>
-                        <option value="C02">administrador</option>
-                        <option value="C01">usuario</option>
+                        <option value="tecnico">tecnico</option>
+                        <option value="administrador">administrador</option>
+                        <option value="usuario">usuario</option>
                     </select>
                   </div>
-              
 
-          
+              </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+              <input type="submit" class="btn btn-success" value="Agregar">
+            </div>  
+          </form>
+        </div>
+      </div>
+    </div>
 
+    <!--Modal Edicion Tecnicos-->
+
+    <div id="editmodal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/editar_persona" method="POST">
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Usuario</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+                  <div class="modal-body">
+                    <input id="id_editar" name="id_editar" type="text" hidden><!--id oculto-->
+                      <div class="form-group">
+                      <label>Nombres</label>
+                      <input type="text" class="form-control" id="nombres_editar" name="nombres_editar" placeholder="Nombres" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Apellidos</label>
+                      <input type="text" class="form-control" id="apellidos_editar" name="apellidos_editar" placeholder="Apellidos" required>
+                    </div>
+                      <div class="form-group">
+                      <label>Correo</label>
+                      <input type="email" class="form-control" id="email_editar" name="email_editar" placeholder="Email" required>
+                    </div>
+                      <div class="form-group">
+                      <label>Direccion</label>
+                      <input type="text" class="form-control" id="direccion_editar" name="direccion_editar"  placeholder="Direccion" required/>
+                    </div>
+                    <div class="form-group">
+                      <label>Telefono</label>
+                      <input type="tel" class="form-control" id="telefono_editar" name="telefono_editar"  placeholder="(+57)" required/>
+                    </div>
+                    <!--<div class="form-group">
+                      <label>Contraseña</label>
+                      <input type="password" class="form-control" id="password" name="password"  placeholder="****" required/>
+                    </div>-->
+                    <div class="form-group">
+                      <label>Rol</label>
+                      <select id="rol_editar" name="rol_editar" class="form-control">  
+                        <option value="tecnico">tecnico</option>
+                        <option value="administrador">administrador</option>
+                        <option value="usuario">usuario</option>
+                    </select>
+                  </div>
               </div>
             <div class="modal-footer">
               <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -210,189 +187,13 @@
         </div>
       </div>
     </div>
-
-
-<!-- Antiguo modal de inserccion de tecnicos
-    <div id="addEmployeeModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form action="/guardar_tecnico" method="post">
-            <div class="modal-header">
-              <h4 class="modal-title">Agregar</h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-hidden="true"
-              >
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre_tecnico"
-                  name="nombre_tecnico"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="correo_tecnico"
-                  name="correo_tecnico"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Telefono</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="telefono"
-                  name="telefono"
-                  required
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <input
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-                value="Cancel"
-              />
-              <input type="submit" class="btn btn-success" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    -->
-    <!-- Modal de edicion de tecnicos -->
-
-    
-    <!-- Modal para Editar   
-    <div id="editModal" class="modal fade" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Info</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form> action="/editar" method="POST"
-                <input name="id_editar" id="id_editar" type="text" hidden>
-              <div class="mb-3">
-                <label for="nombre_editar" class="col-form-label">Nombre:</label>
-                <input id="nombre_editar" name="nombre_editar" type="text" class="form-control" value="">
-              </div>
-              <div class="mb-3">
-                <label for="email_editar" class="col-form-label">Edad:</label>
-                <input id="email_editar" name="email_editar" type="email" class="form-control" value="">
-              </div>
-              <div class="mb-3">
-                <label for="telefono_editar" class="col-form-label">Telefono</label>
-                <input id="telefono_editar" name="telefono_editar" type="tel" class="form-control" value="">
-              </div>
-          </div>
-          <div class="modal-footer">              
-            <button type="submit" class="btn btn-primary">Actualizar</button>
-          </div>
-        </form>
-        </div>
-      </div>
-  </div>
--->
-<!--				<input
-				id="id_tecnico"
-				name="id_tecnico"
-				type="text"
-				hidden
-				
-			  />-->
-
-        <div id="editmodal" class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form action="/editar_tecnico" method="POST">
-                <div class="modal-header">
-                  <h4 class="modal-title">Editar</h4>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-hidden="true"
-                  >
-                    &times;
-                  </button>
-                </div>
-
-                <div class="modal-body">
-                  <input
-                  id="id_editar"
-                  name="id_editar"
-                  type="text"
-                  hidden
-                  >
-                  <div class="form-group">
-                    <label>Nombre</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nombre_editar"
-                      name="nombre_editar"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label>Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="correo_editar"
-                      name="correo_editar"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label>Telefono</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="telefono_editar"
-                      name="telefono_editar"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <input
-                    type="button"
-                    class="btn btn-default"
-                    data-dismiss="modal"
-                    value="Cancel"
-                  />
-                <!--  <button type="submit" class="btn btn-success"></button>-->  
-                <input type="submit" class="btn btn-success" />
-               <!--<button type="submit" class="btn btn-primary">Actualizar</button>--> 
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-
     <!-- Delete Modal HTML -->
-    <div id="deleteEmployeeModal" class="modal fade">
+    <div id="deletemodal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form>
+          <form action="/eliminar_persona" method="POST">
             <div class="modal-header">
+              <input id="id_eliminar" name="id_eliminar" type="text" hidden><!--id oculto-->
               <h4 class="modal-title">Eliminar</h4>
               <button
                 type="button"
@@ -405,7 +206,7 @@
             </div>
             <div class="modal-body">
               <p>Esta seguro que desea realizar esta accion?</p>
-              <p class="text-warning"><small>............</small></p>
+              <p class="text-warning"><small></small></p>
             </div>
             <div class="modal-footer">
               <input
