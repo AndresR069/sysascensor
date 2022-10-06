@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: sysascensor
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.30
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,21 +23,21 @@ DROP TABLE IF EXISTS `ascensor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ascensor` (
-  `id_ascensor` int NOT NULL AUTO_INCREMENT,
+  `id_ascensor` int NOT NULL AUTO_INCREMENT,
   `nombre_lugar` varchar(90) DEFAULT NULL,
   `descripcion_ascensor` varchar(200) DEFAULT NULL,
   `observacion` varchar(500) DEFAULT NULL,
   `id_persona` int DEFAULT NULL,
   `id_sector` int DEFAULT NULL,
   `id_asignacion` int DEFAULT NULL,
-  PRIMARY KEY (`id_ascensor`),
+  PRIMARY KEY (`id_ascensor`),
   KEY `fk_id_persona_idx` (`id_persona`),
-  KEY `fk_id_asignacion_fallo_idx` (`id_asignacion`),
   KEY `fk_id_sector_idx` (`id_sector`),
-  CONSTRAINT `fk_id_asignacion_fallo` FOREIGN KEY (`id_asignacion`) REFERENCES `asignacion_fallos` (`id_asignacion_fallos`),
+  KEY `fk_id_asignacion_fallos_idx` (`id_asignacion`),
+  CONSTRAINT `fk_id_asignacion_fallos` FOREIGN KEY (`id_asignacion`) REFERENCES `asignacion_fallos` (`id_asignacion_fallos`),
   CONSTRAINT `fk_id_persona` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`),
   CONSTRAINT `fk_id_sector` FOREIGN KEY (`id_sector`) REFERENCES `sector` (`id_sector`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +46,7 @@ CREATE TABLE `ascensor` (
 
 LOCK TABLES `ascensor` WRITE;
 /*!40000 ALTER TABLE `ascensor` DISABLE KEYS */;
+INSERT INTO `ascensor` VALUES (2,'dd','dd','dd',31,1,1);
 /*!40000 ALTER TABLE `ascensor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,12 +58,14 @@ DROP TABLE IF EXISTS `asignacion_fallos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `asignacion_fallos` (
-  `id_asignacion_fallos` int NOT NULL AUTO_INCREMENT,
+  `id_asignacion_fallos` int NOT NULL,
   `fecha_asignacion` date DEFAULT NULL,
-  `id_estado` int DEFAULT NULL,
+  `id_estado` int NOT NULL,
+  PRIMARY KEY (`id_asignacion_fallos`,`id_estado`),
+  UNIQUE KEY `id_asignacion_fallos_UNIQUE` (`id_asignacion_fallos`),
   KEY `id_asignacion_idx` (`id_asignacion_fallos`),
   KEY `fk_estado_idx` (`id_estado`),
-  CONSTRAINT `fk_estado` FOREIGN KEY (`id_estado`) REFERENCES `estado_fallos` (`id_estado_fallos`)
+  CONSTRAINT `fk_id_estado` FOREIGN KEY (`id_estado`) REFERENCES `estado_fallos` (`id_estado_fallos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -72,6 +75,7 @@ CREATE TABLE `asignacion_fallos` (
 
 LOCK TABLES `asignacion_fallos` WRITE;
 /*!40000 ALTER TABLE `asignacion_fallos` DISABLE KEYS */;
+INSERT INTO `asignacion_fallos` VALUES (1,'2000-10-00',1);
 /*!40000 ALTER TABLE `asignacion_fallos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +89,7 @@ DROP TABLE IF EXISTS `estado_fallos`;
 CREATE TABLE `estado_fallos` (
   `id_estado_fallos` int NOT NULL AUTO_INCREMENT,
   `nombre_estado` varchar(45) DEFAULT NULL,
-  UNIQUE KEY `id_estado_fallos_UNIQUE` (`id_estado_fallos`)
+  PRIMARY KEY (`id_estado_fallos`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,7 +99,7 @@ CREATE TABLE `estado_fallos` (
 
 LOCK TABLES `estado_fallos` WRITE;
 /*!40000 ALTER TABLE `estado_fallos` DISABLE KEYS */;
-INSERT INTO `estado_fallos` VALUES (1,'Por Definir'),(2,'En curso'),(3,'Finalizado');
+INSERT INTO `estado_fallos` VALUES (1,'En espera'),(2,'En curso'),(3,'Finalizado');
 /*!40000 ALTER TABLE `estado_fallos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +123,7 @@ CREATE TABLE `persona` (
   PRIMARY KEY (`id_persona`),
   KEY `fk_rol_idx` (`id_rol`),
   CONSTRAINT `fk_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +132,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (23,'Kevin David','Bautista','kevinrocha239@gmial.com','carrera','$2a$08$nCMftEMALFuADj0i8ZmBNucYn4OkoMHXbGeX8iKfl8g6y9lNhbc0e',0,1,'(310) 818-0061'),(26,'andres','torres','andres@gmail.com','carrera','$2a$08$ru.mCl5RkQ.2LWADkI/f6OrdW4wexrsM9OyIUTxV4x/86dAnhxAry',0,2,'3012330022'),(29,'camilo','rodri','camilo@gmail.com','carrera','$2a$08$e/VtR2E7QZZHPplBCaBhcuHCRm0iE7w4J5uqr5Wf2lQiv.5i6mM5u',0,3,'(310) 818-0061');
+INSERT INTO `persona` VALUES (23,'Kevin David','Bautista','kevinrocha239@gmial.com','carrera','$2a$08$nCMftEMALFuADj0i8ZmBNucYn4OkoMHXbGeX8iKfl8g6y9lNhbc0e',0,1,'(310) 818-0061'),(30,'juan','rodriguez','carm_0987@hotmail.com','calle 2','$2a$08$u1KT1KGJXYJtiryfkO0bJ.A2tGsE07eGkEo4UnfMwwfEDPWA6FKNG',0,2,'3184351669'),(31,'pepito','alvarez','carodriguezmartinez@ucundinamarca.edu.co','calle 2','$2a$08$W/06CdIro7xrXaNvxCiy7eXiRTCb6We95alsdafL1cDC4FZAZ9gFO',0,2,'3184351669');
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-23 21:20:34
+-- Dump completed on 2022-10-06 17:42:45
