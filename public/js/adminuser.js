@@ -24,6 +24,7 @@ on(document, 'click', '.btnEditar', e => {
     email_editar.value = fila.children[3].innerHTML
     direccion_editar.value = fila.children[4].innerHTML
     telefono_editar.value = fila.children[5].innerHTML
+    rol_editar.value = fila.children[6].innerHTML
 editmodal.show() 
 })
 

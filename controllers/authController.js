@@ -5,7 +5,7 @@ const { promisify } = require("util");
 
 exports.register = async (req, res) => {
   //Nuevo metodo registrar PERSONAS
-  //caputa los datos desde el front
+  //captura los datos desde el front
 
   try {
     const nombres = req.body.nombres;

@@ -186,39 +186,54 @@
                           </div>
                     </div>
                       
-                    <!--Tarjetas-->
-                    <div class="card-single">
+                    <!--Tarjetas Clientes Conjuntos-->
+
+                     <!--
+                    <div class="card-single"  onclick="showDiv2()">
                         <div>
                             <h1>11</h1>
                             <span></span>
-                            <a href="#" class="btn btn-primary" onclick="showDiv2()">Clientes-Conjuntos</a>
+                            <a>Clientes-Conjuntos</a>
                         </div>
                         <div>
                             <span class="bi bi-person-video2"></span>
                         </div>
                     </div>
 
-                    
+                    -->
 
-                    <!--Tarjetas-->
-                    <div class="card-single">
+                    <!--Tarjetas Sectores Fusa-->
+                    <!--
+                    <div class="card-single" onclick="showDiv3()">
                         <div>
                             <h1>5</h1>
                             <span></span>
-                            <a href="#" class="btn btn-primary"  onclick="showDiv3()">Sectores Fusa</a>
+                            <a>Sectores Fusa</a>
                         </div>
                         <div>
                             <span class="bi bi-geo-alt"></span>
                         </div>
                     </div>
+                    -->
+
+
+                    <!--Tarjetas Procesos-->
+
+                    <div class="card-single" onclick="showDiv1()">
                     
-
-
-                    <!--Tarjetas-->
-                    <div class="card-single">
                         <div>
-                            <h1 id="color">8</h1>
-                            <span><a href="#" class="btn btn-dark" onclick="showDiv1()">Procesos</a></span>
+            
+                           
+                                                       
+                        <% resp.forEach((cont)=>{ %>
+                            <tr>
+                               
+                                <h1 ><%= cont.conteo %></h1>
+                          </tr>
+                            <% }) %>
+
+                             
+                            <span><a>Procesos</a></span>
                         </div>
                         <div>
                             <span class="bi bi-kanban"></span>
@@ -245,22 +260,26 @@
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Nombre Conjunto</th>
-                                                    <th>Ascensor en falla</th>
+                                                    <th>Observacion</th>
                                                     <th>Dirección</th>
-                                                    <th>Fallas / Observación</th>
+                                                    <th>Fallas Econtradas</th>
                                                     <th>Nombre Administrador Conjunto</th>
                                                 </tr>
                                             </thead>
                                             
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Conjunto residencial tal</td>
-                                                    <td>1</td>
-                                                    <td>Carrera Tal</td>
-                                                    <td>Obsercacion indicada por el usuario administrador</td>
-                                                    <td>Santiago Perez</td>
-                                                </tr>
+
+                                           
+                                                    <% result.forEach((consulta_index)=>{ %>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td><%= consulta_index.nombre_lugar %></td>
+                                                            <td><%= consulta_index.descripcion_ascensor %></td>
+                                                            <td><%= consulta_index.direccion %></td>
+                                                            <td><%= consulta_index.observacion %></td>
+                                                            <td><%= consulta_index.nombres %> <%= consulta_index.apellidos %> </td>
+                                                        </tr>
+                                                        <% }) %>
                                               
                                           
                                             </tbody>
@@ -342,6 +361,8 @@
                     <!--FIN TABLAS-->
 
                     <!--Calendario-->
+
+                    <!--
                     <div id="calendario" class="customers">
 
                         <ul class="calendario">
@@ -366,6 +387,8 @@
                             </ul>
                             <ul class="date">
                               <li> 6</li>
+
+                              -->
                               <!--
                               <li class="date-event">
                                 <a href="#">7</a>
@@ -373,6 +396,8 @@
                                   <p>Inspección Conjunto X a las 2:00 pm</p>
                                 </div>
                               </li>-->
+
+                            <!--
                               <li>7</li>
                               <li> 8</li>
                               <li> 9</li>
@@ -406,12 +431,12 @@
                               <li> 29</li>
                               <li> 30</li>
                             </ul>
-
-
                             
                     </div>
+                -->
                    <!--Fin Calendario-->    
            
+                
                 </div>
             </main>
         </div>

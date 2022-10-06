@@ -1,206 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Asignacion Tarea</title>
-    <link rel="shortcut icon" href="/img/strava.svg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/task.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Asignacion Tarea</title>
+  <link rel="shortcut icon" href="/img/strava.svg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/task.css">
 
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
-     
-         <!-- BS Table -->
-     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
-     <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/export/bootstrap-table-export.min.js"></script>
- 
-     <!--iconos de boostrap-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
+
+  <!-- BS Table -->
+  <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+  <!--iconos de boostrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
+
 <body>
-    
-    <div class="container">
-        <div class="table-wrappe ">
-          <div class="table-title">
-            <div class="row">
-              <div class="col-sm-6">
-                <h2>Administración de <b>Tareas</b></h2>
-              </div>
-              <div class="col-sm-6">
-                <a href="/index" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i> <span></span></a>
-                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar Nueva Tarea</span></a>
-               <!-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>-->
-              </div>
-              
-            </div>
-            
+
+  <div class="container">
+    <div class="table-wrappe ">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Administración de <b>Tareas</b></h2>
           </div>
-          <table class="table table-striped table-hover"  data-pagination="true" data-click-to-select="true" data-toolbar="#toolbar" data-show-toggle="true"  data-sortable="true" data-toggle="table" data-search="true" data-live-search="true">
-            <thead>
-              <tr>
-                <th>
-                  <span class="custom-checkbox">
-                                      <input type="checkbox" id="selectAll">
-                                      <label for="selectAll"></label>
-                                  </span>
-                </th>
-                
-                <th>Id Falla</th>
-                <th>Falla</th>
-                <th>Fecha de asignación</th>
-                <th>Ubicación</th>
-                <!--<th>Tipo Corrección</th>-->
-                <th>Tecnico Delegado</th>
-                <th>Responsable</th>
-                <th>Estado</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div class="col-sm-6">
+            <a href="/index" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i> <span></span></a>
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                class="material-icons">&#xE147;</i> <span>Agregar Nueva Tarea</span></a>
+          </div>
 
-              <tr>
-                <td>No</td>
-                <td>1</td>
-                <td>Se presenta tal falla</td>
-                <td>17/06/2022</td>
-                <td>Conjunto Residencial Tal</td>
-                <td>Tecnico Andres</td>
-                <td>
-                  Administrador
-                </td>
-                <td>
-                  <p><span class="badge badge-danger">Por definir</span></p>
-                  <p><span class="badge badge-primary">En curso</span></p>
-                  <p><span class="badge badge-success">Finalizado</span></p>
-                </td>
-                <td>
-                  <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                  <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
+        </div>
+
       </div>
-      <!--  Modal- Inserccion de datos -->
-      <div id="addEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
-              <div class="modal-header">
-                <h4 class="modal-title">Agregar Nueva tarea</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <table class="table table-striped table-hover" data-pagination="true" data-click-to-select="true"
+        data-toolbar="#toolbar" data-show-toggle="true" data-sortable="true" data-toggle="table" data-search="true"
+        data-live-search="true">
+        <thead>
+          <tr>
+            <th>
+
+              <label for="selectAll"></label>
+
+            </th>
+
+            <th>Id Falla</th>
+            <th>Falla</th>
+            <th>Fecha de asignación</th>
+            <th>Conjunto</th>
+            <th>Direccion</th>
+            <th>Sector</th>
+            <th>Tecnico Delegado</th>
+            <th>Observaciones</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          <% result.forEach((registros_asig_tareas)=>{ %>
+            <tr>
+              <td>--</td>
+              <td>
+                <%= registros_asig_tareas.id_ascensor %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.descripcion_ascensor %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.fecha_asignacion %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.nombre_lugar %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.direccion %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.nombre_sector %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.nombres %>
+                  <%= registros_asig_tareas.apellidos %>
+              </td>
+              <td>
+                <%= registros_asig_tareas.observacion %>
+              </td>
+              <td>
+                <% if (registros_asig_tareas.nombre_estado=='En espera' ) { %>
+
+                  <span class="badge badge-danger">En espera</span>
+
+                  <% } %>
+
+                    <% if (registros_asig_tareas.nombre_estado=='En curso' ) { %>
+
+                      <span class="badge badge-primary">En curso</span>
+
+                      <% } %>
+
+                        <% if (registros_asig_tareas.nombre_estado=='Finalizado' ) { %>
+
+                          <span class="badge badge-success">Finalizado</span>
+
+                          <% } %>
+
+              </td>
+              <td>
+                <a type="button" class="btnEditar bi bi-pencil-square"></a>
+                <a type="button" class="btnDelete bi bi-trash3"></a>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+
+    </div>
+    <!--  Modal- Inserccion de datos -->
+    <div id="addEmployeeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/addTarea" method="POST">
+            <div class="modal-header">
+              <h4 class="modal-title">Agregar Nueva tarea</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Falla</label>
+                <textarea id="falla" name="falla" class="form-control" placeholder="Falla encontrada"></textarea>
               </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                        <label>Id</label>
-                        <input type="text" class="form-control" placeholder="1">
-                        <label>Falla</label>
-                        <textarea class="form-control" placeholder="Se presenta una falla en el ascesor"></textarea>
-                        </div>
-                        <label>Fecha</label>
-                        <input type="text" class="form-control" placeholder="17/06/2022">
-                        <div class="form-group">
-                        <label>Ubicación</label>
-                        <input type="text" class="form-control" placeholder="Conjunto residencial tal">
+              <div class="form-group">
+                <label>Ubicación</label>
+                <input id="conjunto" name="conjunto" type="text" class="form-control"
+                  placeholder="Conjunto residencial tal">
 
+                <label>Sector</label>
+                <select id="sector" name="sector" class="form-control">
+                  <option value="C01">Norte</option>
+                  <option value="C02">Sur</option>
+                  <option value="C03">Centro</option>
+                  <option value="C04">Este</option>
+                  <option value="C05">Oeste</option>
+                </select>
 
-                       
-            
-                    <div class="form-group">
-                        <label>Tecnico Delegado</label>
-                        <select name="Tipo " class="form-control">
-                            <option value="C01">Seleccione:</option>
-                            <option value="C02">Andres</option>
-                            <option value="C03">Camilo</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Responsable</label>
-                        <input type="text" class="form-control" placeholder="Administrador">
-                        <label>Estado</label>
-                        <select name="Tipo " class="form-control">
-                          <option value="C01">Seleccione:</option>
-                          <option value="C02">En seleccion xD de estado</option>
-                      </select>
-                    </div>
+                <div class="form-group">
+                  <label>Tecnico Delegado</label>
+                  <select id="tecnico" name="tecnico" class="form-control">
+                    <option value="C01">Por definir</option>
 
-            
+                    <% tecnicos.forEach((tecnico)=>{ %>
 
+                      <option value="Tecnico">
+                        <%= tecnico.nombres %>
+                          <%= tecnico.apellidos %>
+                      </option>
+
+                      <% }) %>
+
+                  </select>
                 </div>
+
+                <div class="form-group">
+                  <label>Obseraciones</label>
+                  <textarea id="observaciones" name="observaciones" class="form-control"
+                    placeholder="Obseraciones que considere necesarias"></textarea>
+                  <label>Estado</label>
+                  <select id="estado" name="estado" name="Tipo " class="form-control">
+                    <option value="C01">En espera</option>
+                    <option value="C02">En curso</option>
+                    <option value="C03">Finalizado</option>
+                  </select>
+                </div>
+              </div>
               <div class="modal-footer">
                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                 <input type="submit" class="btn btn-success" value="Agregar">
               </div>
-        
-            </form>
-          </div>
+
+          </form>
         </div>
       </div>
-      <!-- Edit Modal HTML -->
-      <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
-              <div class="modal-header">
-                <h4 class="modal-title">Editar tarea</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <h4 class="modal-title">Agregar Nueva tarea</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Falla</label>
+                <textarea class="form-control" placeholder="Se presenta una falla en el ascesor"></textarea>
               </div>
-              <div class="modal-body">
+              <!--
+                        <label>Fecha</label>
+                        <input type="text" class="form-control" placeholder="17/06/2022">
+                        -->
+              <div class="form-group">
+                <label>Ubicación</label>
+                <input type="text" class="form-control" placeholder="Conjunto residencial tal">
+
+
+
+
                 <div class="form-group">
-                  <label>Falla</label>
-                  <input type="text" class="form-control" required>
+                  <label>Tecnico Delegado</label>
+                  <select name="Tipo " class="form-control">
+                    <option value="C01">Seleccione:</option>
+                    <option value="C02">Andres</option>
+                    <option value="C03">Camilo</option>
+                  </select>
                 </div>
+
+
                 <div class="form-group">
-                  <label>Ubicacion</label>
-                  <input type="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label>Address</label>
-                  <textarea class="form-control" required></textarea>
-                </div>
-                <div class="form-group">
-                  <label>Phone</label>
-                  <input type="text" class="form-control" required>
+                  <label>Obseraciones</label>
+                  <textarea class="form-control" placeholder="Obseraciones que considere necesarias"></textarea>
+                  <label>Estado</label>
+                  <select name="Tipo " class="form-control">
+                    <option value="C01">Seleccione:</option>
+                    <option value="C02">Por definir</option>
+                    <option value="C02">En curso</option>
+                    <option value="C02">Finalizado</option>
+                  </select>
                 </div>
               </div>
               <div class="modal-footer">
                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                <input type="submit" class="btn btn-info" value="Guardar">
+                <input type="submit" class="btn btn-success" value="Agregar">
               </div>
-            </form>
-          </div>
+
+          </form>
         </div>
       </div>
-      <!-- Delete Modal HTML -->
-      <div id="deleteEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
-              <div class="modal-header">
-                <h4 class="modal-title">Eliminar Tarea</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p>¿Estas seguro de que quieres eliminar esta tarea?</p>
-                <p class="text-warning"><small>Esta acción no se puede revertir.</small></p>
-              </div>
-              <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                <input type="submit" class="btn btn-danger" value="Eliminar">
-              </div>
-            </form>
-          </div>
+    </div>
+
+
+    <!-- Delete Modal HTML -->
+    <div id="deleteEmployeeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <h4 class="modal-title">Eliminar Tarea</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>¿Estas seguro de que quieres eliminar esta tarea?</p>
+              <p class="text-warning"><small>Esta acción no se puede revertir.</small></p>
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+              <input type="submit" class="btn btn-danger" value="Eliminar">
+            </div>
+          </form>
         </div>
       </div>
+    </div>
 
 </body>
+
 </html>
