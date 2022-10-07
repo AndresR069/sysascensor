@@ -187,7 +187,7 @@ main {
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 4rem;
+    grid-gap: 6rem;
     margin-top: 1rem;
 }
 
