@@ -1,194 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Systems Admin</title>
-    <link rel="shortcut icon" href="/img/strava.svg">
+    <link rel="shortcut icon" href="/img/strava.svg" />
     <!--Lineawesome css-->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
     <!--iconos de boostrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/dashboard1.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/dashboard1.css" />
 
     <script>
+      function showDiv1() {
+        document.getElementById("procesos").style.display = "";
+        document.getElementById("clientes").style.display = "none";
+        document.getElementById("sectores").style.display = "none";
+      }
 
-        function showDiv1(){
-            document.getElementById('procesos').style.display = '';
-            document.getElementById('clientes').style.display = 'none';
-            document.getElementById('sectores').style.display = 'none';
-        }
+      function showDiv2() {
+        document.getElementById("procesos").style.display = "none";
+        document.getElementById("clientes").style.display = "";
+        document.getElementById("sectores").style.display = "none";
+      }
 
-        function showDiv2(){
-            document.getElementById('procesos').style.display = 'none';
-            document.getElementById('clientes').style.display = '';
-            document.getElementById('sectores').style.display = 'none';
-        }
-
-        function showDiv3(){
-            document.getElementById('procesos').style.display = 'none';
-            document.getElementById('clientes').style.display = 'none';
-            document.getElementById('sectores').style.display = '';
-            //document.getElementById('calendario').style.display = 'none';
-        }
-
+      function showDiv3() {
+        document.getElementById("procesos").style.display = "none";
+        document.getElementById("clientes").style.display = "none";
+        document.getElementById("sectores").style.display = "";
+        //document.getElementById('calendario').style.display = 'none';
+      }
     </script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+
+    <!-- SCRIPT MAPA -->
+
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+        #map {
+            position: fixed; 
+            /* margin: 10%; */
+            width: 40%;
+            }
+            #features {
+            width: 70%;
+            margin-left: 70%;
+            font-family: sans-serif;
+            overflow-y: scroll;
+            background-color: #fafafa;
+            }
+            section {
+            padding: 25px 50px;
+            line-height: 30px;
+            border-bottom: 1px solid #ddd;
+            opacity: 0.25;
+            font-size: 20px;
+            }
+            section.active {
+            opacity: 1;
+            }
+            section:last-child {
+            border-bottom: none;
+            margin-bottom: 200px;
+            }
+
+        </style>
 
 
+    <!-- FIN SCRIPT MAPA -->
 
-</head>
-<body>
 
-    <input type="checkbox" id="nav-toggle">
-     <!--Icono y Nombre soft-->
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <!--Icono y Nombre soft-->
     <div class="sidebar">
-        <div class="sidebar-brand">
-            <h1><span class="lab la-accusoft"></span><span>SysAscensor</span></h1>
-        </div>
-         <!--Menu de opciones-->
-            <div class="sidebar-menu">
-                <ul>
-                    <li>
-                        <a href="#" class="active"><span class="bi bi-menu-app-fill"></span><span>Menú</span></a>
-                    </li>
-                    <li>
-                        <a href="/adminuser" ><span class="bi bi-people"></span><span>Registro de Usuarios</span></a>
-                    </li>
-                    <li>
-                        <a href="/clientes"><span class="bi bi-card-checklist"></span><span>Clientes-Ascesores</span></a>
-                    </li>
-                    <li>
-                        <a href="/tareas"><span class="las la-clipboard-list"></span><span>Asignacion Tareas</span></a>
-                    </li>
-                    <li>
-                        <a href="/login"><span class="bi bi-box-arrow-left"></span><span>Salir</span></a>
-                    </li>
-                    
-                </ul>
-            </div>
-            
+      <div class="sidebar-brand">
+        <h1><span class="lab la-accusoft"></span><span>SysAscensor</span></h1>
+      </div>
+      <!--Menu de opciones-->
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="#" class="active"
+              ><span class="bi bi-menu-app-fill"></span><span>Menú</span></a
+            >
+          </li>
+          <li>
+            <a href="/adminuser"
+              ><span class="bi bi-people"></span
+              ><span>Registro de Usuarios</span></a
+            >
+          </li>
+          <!-- <li>
+            <a href="/clientes"
+              ><span class="bi bi-card-checklist"></span
+              ><span>Clientes-Ascesores</span></a
+            >
+          </li> -->
+          <li>
+            <a href="/tareas"
+              ><span class="las la-clipboard-list"></span
+              ><span>Asignacion Tareas</span></a
+            >
+          </li>
+          <li>
+            <a href="/login"
+              ><span class="bi bi-box-arrow-left"></span><span>Salir</span></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-        
-    
+
     <!--Menu Contenido barra-->
-        <div class="main-content">
-                <header>
-                    <h1>
-                    <label for="nav-toggle">
-                            <span class="las la-bars"></span>
-                    </label>
-                    Menú Principal
-                    </h1>
+    <div class="main-content">
+      <header>
+        <h1>
+          <label for="nav-toggle">
+            <span class="las la-bars"></span>
+          </label>
+          Menú Principal
+        </h1>
 
-                    <!--Buscar-->
-                    <div class="search-wrapper">
-                        <span class="bi bi-search"></span>
-                        <input type="search" placeholder="Buscar">
-                    </div>
+        <!--Buscar-->
+        <div class="search-wrapper">
+          <span class="bi bi-search"></span>
+          <input type="search" placeholder="Buscar" />
+        </div>
 
-                    <!--Apartado usuario-->                    
-                    <div class="user-wrapper">
-                        <img src="img/user.png" width="40px" height="40px" alt="">
-                        <div>
-                            <h4>Usuario</h4>
-                            <small>Super Admin</small>
-                        </div>
-                    </div>
-                </header>
-                <!--Tarjetas de info-->
+        <!--Apartado usuario-->
+        <div class="user-wrapper">
+          <img src="img/user.png" width="40px" height="40px" alt="" />
+          <div>
+            <h4>Usuario</h4>
+            <small>Super Admin</small>
+          </div>
+        </div>
+      </header>
+      <!--Tarjetas de info-->
 
-            <main>
-                <!--RELOJ-->
-                <div>
-                    <style>
-                            #reloj {
-                            font-family: sans-serif;
-                            font-size: 60px;
-                            text-shadow: 0px 0px 1px #333;
-                            }
-                            
-                            .reloj-contenedor{
-                            background-color: rgb(12, 119, 206);
-                            color:#fff;
-                            max-width: 350px;
-                            text-align: center;
-                            border-radius: 10px;
-                            margin: 0 auto;
+      <main>
+        <!--RELOJ-->
+        <!-- <div>
+          <style>
+            #reloj {
+              font-family: sans-serif;
+              font-size: 60px;
+              text-shadow: 0px 0px 1px #333;
+            }
 
-                            }
-                            
-                            #fecha{
-                                letter-spacing: 10px;
-                                font-size: 15px;
-                            }
-                  </style>
-                
-                    <div id="reloj">
-                        <div class="reloj-contenedor" id="contenedor">
-                          <div id="hora">00:00:00</div>
-                          <div id="fecha">00/00/00</div>
-                        </div>
-                      </div>
+            .reloj-contenedor {
+              background-color: rgb(12, 119, 206);
+              color: #fff;
+              max-width: 350px;
+              text-align: center;
+              border-radius: 10px;
+              margin: 0 auto;
+            }
 
-                  <script>
-                        const horaDiv = document.querySelector('#hora');
-                        const fechaDiv = document.querySelector('#fecha');
+            #fecha {
+              letter-spacing: 10px;
+              font-size: 15px;
+            }
+          </style>
 
-                        // Funcion para tomar la hora actual e imprimirlo en HTML
-                        const mostrarReloj = () => {
-                          let fecha = new Date();
-                          let hora = formatoHora(fecha.getHours());
-                          let minuto = formatoHora(fecha.getMinutes());
-                          let segundo = formatoHora(fecha.getSeconds());
-                          horaDiv.innerHTML = `${hora}:${minuto}:${segundo}`;
-                          
-                        // Arreglos que almacenan los nombres de las fechas en español
-                          
-                          const meses = ['Ene', 'Feb', 'Mar','Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-                            const dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'];
-                          
-                          let diaSemana = dias[fecha.getDay()];
-                          let dia = fecha.getDate();
-                          let mes = meses[fecha.getMonth()];
-                          
-                          let fechaTexto = `${diaSemana}, ${dia} ${mes}`;
-                          
-                          fechaDiv.innerHTML = fechaTexto;
-                        }
-                
-                        // Le añade un cero a una unidad de tiempo inferior a 10 ya que por defecto solo devuelve el valor sin el 0 como formato
-                        const formatoHora = (tiempo) => {
-                          if(tiempo < 10) {
-                            tiempo = `0${tiempo}`;
-                          }
-                          return tiempo;
-                        }
-                
-                        // Cuando se carga la página se ejecuta la función de reloj cada segundo
-                        window.onload = () => {
-                          setInterval(mostrarReloj, 1000);
-                        }
-                    </script>
-                </div>
-                <!--FIN DE RELOJ-->
-                
-                <div class="cards">
-                    <div class="card-single">
-                        <div class="card-header">
-                            SYSTEMS ASCENSOR
-                          </div>
-                          <div class="card-body">
-                            <h5 class="card-title">¡Sistema de notificaciones!</h5>
-                            <p class="card-text">Alertas, fallas y mantenimiento ascensores</p>
-                          </div>
-                    </div>
-                      
-                    <!--Tarjetas Clientes Conjuntos-->
+          <div id="reloj">
+            <div class="reloj-contenedor" id="contenedor">
+              <div id="hora">00:00:00</div>
+              <div id="fecha">00/00/00</div>
+            </div>
+          </div>
 
-                     <!--
+          <script>
+            const horaDiv = document.querySelector("#hora");
+            const fechaDiv = document.querySelector("#fecha");
+
+            // Funcion para tomar la hora actual e imprimirlo en HTML
+            const mostrarReloj = () => {
+              let fecha = new Date();
+              let hora = formatoHora(fecha.getHours());
+              let minuto = formatoHora(fecha.getMinutes());
+              let segundo = formatoHora(fecha.getSeconds());
+              horaDiv.innerHTML = `${hora}:${minuto}:${segundo}`;
+
+              // Arreglos que almacenan los nombres de las fechas en español
+
+              const meses = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+              const dias = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
+
+              let diaSemana = dias[fecha.getDay()];
+              let dia = fecha.getDate();
+              let mes = meses[fecha.getMonth()];
+
+              let fechaTexto = `${diaSemana}, ${dia} ${mes}`;
+
+              fechaDiv.innerHTML = fechaTexto;
+            };
+
+            // Le añade un cero a una unidad de tiempo inferior a 10 ya que por defecto solo devuelve el valor sin el 0 como formato
+            const formatoHora = (tiempo) => {
+              if (tiempo < 10) {
+                tiempo = `0${tiempo}`;
+              }
+              return tiempo;
+            };
+
+            // Cuando se carga la página se ejecuta la función de reloj cada segundo
+            window.onload = () => {
+              setInterval(mostrarReloj, 1000);
+            };
+          </script>
+        </div> -->
+        <!--FIN DE RELOJ-->
+
+        <div class="cards">
+          <div class="card-single">
+            <div class="card-header">SYSTEMS ASCENSOR</div>
+            <div class="card-body">
+              <h5 class="card-title">¡Sistema de notificaciones!</h5>
+              <p class="card-text">
+                Alertas, fallas y mantenimiento ascensores
+              </p>
+            </div>
+          </div>
+
+          <!--Tarjetas Clientes Conjuntos-->
+
+          <!--
                     <div class="card-single"  onclick="showDiv2()">
                         <div>
                             <h1>11</h1>
@@ -202,8 +268,8 @@
 
                     -->
 
-                    <!--Tarjetas Sectores Fusa-->
-                    <!--
+          <!--Tarjetas Sectores Fusa-->
+          
                     <div class="card-single" onclick="showDiv3()">
                         <div>
                             <h1>5</h1>
@@ -214,233 +280,258 @@
                             <span class="bi bi-geo-alt"></span>
                         </div>
                     </div>
-                    -->
+                   
 
-
-                    <!--Tarjetas Procesos-->
-
-                    <div class="card-single" onclick="showDiv1()">
                     
-                        <div>
-            
-                           
-                                                       
-                        <% resp.forEach((cont)=>{ %>
-                            <tr>
-                               
-                                <h1 ><%= cont.conteo %></h1>
-                          </tr>
-                            <% }) %>
+<!--RELOJ-->
+        <div>
+          <style>
+            #reloj {
+              font-family: sans-serif;
+              font-size: 60px;
+              text-shadow: 0px 0px 1px #333;
+            }
 
-                             
-                            <span><a>Procesos</a></span>
-                        </div>
-                        <div>
-                            <span class="bi bi-kanban"></span>
-                        </div>
-                    </div>
-                </div>
+            .reloj-contenedor {
+              background-color: rgb(12, 119, 206);
+              color: #fff;
+              max-width: 350px;
+              text-align: center;
+              border-radius: 10px;
+              margin: 0 auto;
+            }
 
-                
-                <!---->
-                <div class="recent-grid">
-                    <!--TABLA 1-->
-                    <div id="procesos" class="projetcs" style=''>
-                        <div class="card">
-                            <div class="card-header">
-                                <h3>Procesos Recientes</h3>
-                                <button>Ver todo <span class="las la-arrow-right"></span></button>
-                            </div>
+            #fecha {
+              letter-spacing: 10px;
+              font-size: 15px;
+            }
+          </style>
 
-                            <!-- TABLA (CARD) CLIENTES-->
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table width="100%"><!--- TABLA Procesos-->
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Nombre Conjunto</th>
-                                                    <th>Observacion</th>
-                                                    <th>Dirección</th>
-                                                    <th>Fallas Econtradas</th>
-                                                    <th>Nombre Administrador Conjunto</th>
-                                                </tr>
-                                            </thead>
-                                            
-                                            <tbody>
+          <div id="reloj">
+            <div class="reloj-contenedor" id="contenedor">
+              <div id="hora">00:00:00</div>
+              <div id="fecha">00/00/00</div>
+            </div>
+          </div>
 
-                                           
-                                                    <% result.forEach((consulta_index)=>{ %>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td><%= consulta_index.nombre_lugar %></td>
-                                                            <td><%= consulta_index.descripcion_ascensor %></td>
-                                                            <td><%= consulta_index.direccion %></td>
-                                                            <td><%= consulta_index.observacion %></td>
-                                                            <td><%= consulta_index.nombres %> <%= consulta_index.apellidos %> </td>
-                                                        </tr>
-                                                        <% }) %>
-                                              
-                                          
-                                            </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <script>
+            const horaDiv = document.querySelector("#hora");
+            const fechaDiv = document.querySelector("#fecha");
 
+            // Funcion para tomar la hora actual e imprimirlo en HTML
+            const mostrarReloj = () => {
+              let fecha = new Date();
+              let hora = formatoHora(fecha.getHours());
+              let minuto = formatoHora(fecha.getMinutes());
+              let segundo = formatoHora(fecha.getSeconds());
+              horaDiv.innerHTML = `${hora}:${minuto}:${segundo}`;
 
+              // Arreglos que almacenan los nombres de las fechas en español
 
-                    <!--TABLA 2-->
+              const meses = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+              const dias = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
 
-                    <div id="clientes" class="projetcs" style="display:none">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3>Clientes-Conjuntos</h3>
-                                <button>Ver todo <span class="las la-arrow-right"></span></button>
-                            </div>
+              let diaSemana = dias[fecha.getDay()];
+              let dia = fecha.getDate();
+              let mes = meses[fecha.getMonth()];
 
-                            <!-- TABLA (CARD) CLIENTES-->
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table width="100%"><!--- TABLA Sectores Clientes-Conjuntos-->
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Numero. ASC.</th>
-                                                    <th>Nombre</th>
-                                                    <th>Dirección</th>
-                                                </tr>
-                                            </thead>
-                                            
-                                            <tbody>
-                                                                                         
-                                            </tbody>
+              let fechaTexto = `${diaSemana}, ${dia} ${mes}`;
 
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              fechaDiv.innerHTML = fechaTexto;
+            };
 
+            // Le añade un cero a una unidad de tiempo inferior a 10 ya que por defecto solo devuelve el valor sin el 0 como formato
+            const formatoHora = (tiempo) => {
+              if (tiempo < 10) {
+                tiempo = `0${tiempo}`;
+              }
+              return tiempo;
+            };
 
-                    <!--TABLA 3-->
+            // Cuando se carga la página se ejecuta la función de reloj cada segundo
+            window.onload = () => {
+              setInterval(mostrarReloj, 1000);
+            };
+          </script>
+        </div>
+        <!--FIN DE RELOJ-->                    
 
-                    <div id="sectores" class="projetcs" style="display:none">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3>Sectores</h3>
-                                <button>Ver todo <span class="las la-arrow-right"></span></button>
-                            </div>
-    
-                            <!-- TABLA (CARD) CLIENTES-->
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table width="100%"> 
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Numero. ASC.</th>
-                                                    <th>Nombre</th>
-                                                    <th>Sector</th>
-                                                </tr>
-                                            </thead>
-                                            
-                                            <tbody>
-                                                
-                                         
-    
-                                            </tbody>
-    
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--FIN TABLAS-->
-
-                    <!--Calendario-->
-
-                    <!--
-                    <div id="calendario" class="customers">
-
-                        <ul class="calendario">
-                            <span>Junio</span>
-                            <ul class="weeks">
-                              <li> Lu</li>
-                              <li> Ma</li>
-                              <li> Mi</li>
-                              <li> Ju</li>
-                              <li> Vi</li>
-                              <li> S&aacute;</li>
-                              <li> Do</li>
-                            </ul>
-                            <ul class="date">
-                              <li class="date-passed"> 30</li>
-                              <li class="date-passed"> 31</li>
-                              <li> 1</li>
-                              <li> 2</li>
-                              <li> 3</li>
-                              <li> 4</li>
-                              <li> 5</li>
-                            </ul>
-                            <ul class="date">
-                              <li> 6</li>
-
-                              -->
-                              <!--
-                              <li class="date-event">
-                                <a href="#">7</a>
-                                <div>
-                                  <p>Inspección Conjunto X a las 2:00 pm</p>
-                                </div>
-                              </li>-->
-
-                            <!--
-                              <li>7</li>
-                              <li> 8</li>
-                              <li> 9</li>
-                              <li> 10</li>
-                              <li> 11</li>
-                              <li> 12</li>
-                            </ul>
-                            <ul class="date">
-                              <li> 13</li>
-                          
+                 
                     
-                              <li>14</li>
-                              <li> 15</li>
-                              <li> 16</li>
-                              <li> 17</li>
-                              <li> 18</li>
-                              <li> 19</li>
-                            </ul>
-                            <ul class="date">
-                              <li> 20</li>
-                              <li> 21</li>
-                              <li> 22</li>
-                              <li> 23</li>
-                              <li> 24</li>
-                              <li> 25</li>
-                              <li> 26</li>
-                            </ul>
-                            <ul class="date">
-                              <li> 27</li>
-                              <li> 28</li>
-                              <li> 29</li>
-                              <li> 30</li>
-                            </ul>
-                            
-                    </div>
-                -->
-                   <!--Fin Calendario-->    
-           
-                
-                </div>
-            </main>
+
+          <!--Tarjetas Procesos-->
+
+          <div class="card-single" onclick="showDiv1()">
+            <div>
+              <% resp.forEach((cont)=>{ %>
+              <tr>
+                <h1><%= cont.conteo %></h1>
+              </tr>
+              <% }) %>
+
+              <span><a>Procesos</a></span>
+            </div>
+            <div>
+              <span class="bi bi-kanban"></span>
+            </div>
+          </div>
         </div>
 
+        <!---->
+        <div class="recent-grid">
+          <!--TABLA 1-->
+          <div id="procesos" class="projetcs" style="">
+            <div class="card">
 
-</body>
+
+                <!-- MAPA -->
+
+
+                
+<div id="map"></div>
+<div id="features">
+    <section id="1" class="active">
+            <h3>MULTIFAMILIAR MIRADOR DE KATALEY</h3>
+                <h4>Direccion: CRA 5 #19-72 </h4>
+                    <p>
+                      Observación: Inspeccion de ascensor por variaciones en el fluido electrico
+                    </p>
+    </section>
+    <section id="2">
+            <h3>CON JUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2</h3>
+                <h4>Direccion:: CALLE 23 #64A - 72 </h4>
+                    <p>
+                      Observación: Por constantes picos en el fluido electrico fue necesario reemplazar fuente de 24 voltios en la torre 1, 
+                        en la torre 2 se reemplazaron 2 (dos) inductores de 24 voltios ya que el ascensor no paraba en los pisos indicados 
+                    </p>
+    </section>
+    <section id="3">
+            <h3>CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3</h3>
+                <h4>Direccion: CALLE 21 #64A - 80</h4>
+                    <p>
+                      Observación: Fue necesario instalar un ARD (sistema de rescate de emergencia) por los multiples cortes de energia.
+                    </p>
+    </section>
+    <section id="4">
+            <h3>WCONJUNTO LAS HELICONIAS</h3>
+                <h4>Direccion: CRA 62 #19 - 44 </h4>
+                    <p>
+                      Observación: Para la eliminacion de ruidos en el cierre y apertura de las puertas de cabina fue necesario cambiar los rodamientos del motor de este operador de puertas.
+                    </p>
+    </section>
+    <section id="5">
+            <h3>CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1</h3>
+                <h4>Direccion: CALLE 22A #13 - 119 </h4>
+                  <p>Torre A: Cambio de retenedor por fugas de aceite lubricante del motor.</p>
+                  <p>Torre B: Reparacion de limitador de velocidad por tiempo de uso</p>
+                  <p>Torre C:instalacion de bateria de emergencia nueva de 24 voltios. </p>
+    </section>
+    <section id="6">
+      <a href="/index" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> <span>SALIR</span></a>
+    </section>
+  </div>
+  
+<script src="/js/map.js"></script>
+
+
+
+
+
+                <!-- FIN MAPA -->
+
+
+
+
+              <!-- <div class="card-header">
+                <h3>Procesos Recientes</h3>
+                <button>
+                  Ver todo <span class="las la-arrow-right"></span>
+                </button>
+              </div> -->
+
+              <!-- TABLA (CARD) CLIENTES-->
+              <!-- <div class="card-body">
+                <div class="table-responsive">
+                  <table width="100%">
+                    <!--- TABLA Procesos-->
+                    <!-- <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Nombre Conjunto</th>
+                        <th>Observacion</th>
+                        <th>Dirección</th>
+                        <th>Fallas Econtradas</th>
+                        <th>Nombre Administrador Conjunto</th>
+                      </tr> -->
+                    <!-- </thead> 
+
+                    <tbody>
+                      <% result.forEach((consulta_index)=>{ %>
+                      <tr>
+                        <td></td> -->
+                        <!-- <td><%= consulta_index.nombre_lugar %></td>
+                        <td><%= consulta_index.descripcion_ascensor %></td>
+                        <td><%= consulta_index.direccion %></td>
+                        <td><%= consulta_index.observacion %></td>
+                        <td> -->
+                          <!-- <%= consulta_index.nombres %> <%=
+                          consulta_index.apellidos %> -->
+                        <!-- </td>
+                      </tr> -->
+                      <!-- <% }) %> -->
+                    <!-- </tbody>
+                  </table>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <!--TABLA 2-->
+
+          <div id="clientes" class="projetcs" style="display: none">
+            <div class="card">
+              <div class="card-header">
+                <h3>Clientes-Conjuntos</h3>
+                <button>
+                  Ver todo <span class="las la-arrow-right"></span>
+                </button>
+              </div>
+
+              <!-- TABLA (CARD) CLIENTES-->
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table width="100%">
+                    <!--- TABLA Sectores Clientes-Conjuntos-->
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Numero. ASC.</th>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                      </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
