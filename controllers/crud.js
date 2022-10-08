@@ -93,15 +93,26 @@ exports.addTarea = async (req, res) => {
   try {
     //datos tabla ascensor
     const falla = req.body.falla;
-    console.log(nombres);
+   // console.log('la falla es: ' + falla);
     const conjunto = req.body.conjunto;
-    console.log(apellidos);
+   // console.log('ubicacion conjunto: ' + conjunto);
+
+    //Manipulacion de la cadena tecnico para obtener solo id
     const tecnico = req.body.tecnico;
-    console.log(tecnico);
+
+    //console.log(tecnico);
+
+    const id_tecnico = tecnico.split(" ", 1);
+   // console.log('id del tecnico: ' + id_tecnico);
+
+    //-------------------------------------------------------
+
+
+
     const observaciones = req.body.observaciones;
-    console.log(observaciones);
+    //console.log(observaciones);
     const sector = req.body.sector;
-    console.log(sector);
+   // console.log(sector);
 
     //datos tabla asignacion fallos
     const now = new Date(); //Extraer fecha actual 
@@ -109,11 +120,11 @@ exports.addTarea = async (req, res) => {
     month = now.getMonth();
     day = now.getDate();
 
-    let fechaActual = year + '/' + month + '/' + day;
-    console.log(fechaActual)
+    let fechaActual = year + '-' + month + '-' + day;
+    //console.log(fechaActual)
 
     const estado = req.body.estado;
-    console.log(estado);
+    //console.log(estado);
 
 
 
@@ -125,15 +136,15 @@ exports.addTarea = async (req, res) => {
     estado //seccion de busqueda de id
     ) {
       case "En espera":
-        console.log('entro a case estado en espera')
+       // console.log('entro a case estado en espera')
         id_estado = "1";
         break;
       case "En curso":
-        console.log('entro a case en curso')
+      //  console.log('entro a case en curso')
         id_estado = "2";
         break;
       case "Finalizado":
-        console.log('entro a case finalizado')
+        //console.log('entro a case finalizado')
         id_estado = "3";
         break;
     }
@@ -146,32 +157,35 @@ exports.addTarea = async (req, res) => {
     sector //seccion de busqueda de id_sector
     ) {
       case "Norte":
-        console.log('entro a case sector Norte')
+      //  console.log('entro a case sector Norte')
         id_sector = "1";
         break;
       case "Sur":
-        console.log('entro a case sector Sur')
+       // console.log('entro a case sector Sur')
         id_sector = "2";
         break;
       case "Centro":
-        console.log('entro a case sector Centro')
+      //  console.log('entro a case sector Centro')
         id_sector = "5";
         break;
       case "Este":
-        console.log('entro a case sector Este')
+       // console.log('entro a case sector Este')
         id_sector = "3";
         break;
       case "Oeste":
-        console.log('entro a case sector Oeste')
+       // console.log('entro a case sector Oeste')
         id_sector = "4";
         break;
     }
 
-        //id_aleatorio no repetitivo de asignacion fallos
+    //id_aleatorio no repetitivo de asignacion fallos
 
     // RECORDATORIO: Realizar funcion para verificar que no se repita
-    let aleatorio = Math.random() * (10000);
+    let aleatorio = Math.random() * (100000);
     const id_random = Math.floor(aleatorio);
+
+    //console.log(id_random)
+
 
     conexion.query(
       "INSERT INTO asignacion_fallos SET ?",
@@ -189,9 +203,9 @@ exports.addTarea = async (req, res) => {
             nombre_lugar: conjunto,
             descripcion_ascensor: falla,
             observacion: observaciones,
-            id_persona: persona,
+            id_persona: id_tecnico,
             id_sector: id_sector,
-            id_asignacion: id_random 
+            id_asignacion: id_random
           },
           (error, result) => {
             if (error) throw error;
@@ -201,9 +215,12 @@ exports.addTarea = async (req, res) => {
           })
       }
     ); //al colocar query ya podemos especificar una sentencia MYSQL
+
+
   } catch (error) {
     console.log(error);
   }
+
 };
 
 
