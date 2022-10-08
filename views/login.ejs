@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/estyle_log.css" />
-    <link rel="shortcut icon" href="/img/strava.svg">
+    <link rel="shortcut icon" href="/img/strava.svg" />
 
     <title>Log</title>
   </head>
   <body>
     <!--<h1>SYSTEMS ASCESOR FUSA</h1>-->
-    <br>
-    <br>
+    <br />
+    <br />
     <div class="container" id="container">
       <div class="form-container sign-in-container">
         <form id="formLogin" action="/login" method="POST">
+          <img src="/public/img/icono.png" alt="" />
           <h1>Iniciar Sesión</h1>
-          <div class="social-container">
-            <!--<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>-->
-          </div>
-          <span>Usa tu correo</span>
+          <div class="social-container"></div>
+          <span> INGRESA TU CORREO </span>
           <input
             type="text"
             class="form-control"
@@ -54,21 +51,21 @@
       </div>
     </div>
 
-        <!--llamada a switalert-->
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--llamada a switalert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <% if(alert) { %>
-        <script>
-          Swal.fire({
-              title: '<%= alertTitle %>',
-              text: '<%= alertMessage %>',
-              icon: '<%= alertIcon %>',
-              showConfirmButton: '<%= showConfirmButton%>',
-              timer: '<%= timer %>'
-          }).then(()=>{
-          window.location='/<%= ruta %>'
-          })
-        </script>
-        <% } %>
+    <% if(alert) { %>
+    <script>
+      Swal.fire({
+        title: "<%= alertTitle %>",
+        text: "<%= alertMessage %>",
+        icon: "<%= alertIcon %>",
+        showConfirmButton: "<%= showConfirmButton%>",
+        timer: "<%= timer %>",
+      }).then(() => {
+        window.location = "/<%= ruta %>";
+      });
+    </script>
+    <% } %>
   </body>
 </html>

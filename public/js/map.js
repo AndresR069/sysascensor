@@ -4,7 +4,7 @@ const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v11",
   center: [-74.3610158, 4.343664], //puntos localizacion fusa
-  zoom: 25.5,
+  zoom: 13.5,
   bearing: 37,
   pitch: 50,
 });
