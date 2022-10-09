@@ -36,7 +36,7 @@ router.get("/indexTec", (req, res) => {
 
 router.get('/hojamanten/:id', (req, res) => {
   const id = req.params.id;
-  conexion.query('SELECT ascensor.id_ascensor,ascensor.descripcion_ascensor, ascensor.nombre_lugar, ascensor.descripcion_ascensor, asignacion_fallos.fecha_asignacion, persona.direccion, sector.nombre_sector , persona.nombres, persona.apellidos, ascensor.observacion, estado_fallos.nombre_estado from ascensor INNER JOIN persona ON persona.id_persona = ascensor.id_persona INNER JOIN asignacion_fallos ON asignacion_fallos.id_asignacion_fallos = ascensor.id_asignacion INNER JOIN estado_fallos ON estado_fallos.id_estado_fallos = asignacion_fallos.id_estado inner join sector ON sector.id_sector = ascensor.id_sector WHERE  ascensor.id_ascensor=?', [id], (error, results) => {
+  conexion.query('SELECT ascensor.id_ascensor,ascensor.id_asignacion, ascensor.descripcion_ascensor, ascensor.nombre_lugar, ascensor.descripcion_ascensor, asignacion_fallos.fecha_asignacion, persona.direccion, sector.nombre_sector , persona.nombres, persona.apellidos, ascensor.observacion, estado_fallos.nombre_estado from ascensor INNER JOIN persona ON persona.id_persona = ascensor.id_persona INNER JOIN asignacion_fallos ON asignacion_fallos.id_asignacion_fallos = ascensor.id_asignacion INNER JOIN estado_fallos ON estado_fallos.id_estado_fallos = asignacion_fallos.id_estado inner join sector ON sector.id_sector = ascensor.id_sector WHERE  ascensor.id_ascensor=?', [id], (error, results) => {
     if (error) {
       throw error;
     } else {
@@ -96,4 +96,5 @@ router.post('/editar_persona', crud.editar_persona)
 
 //Metodos CRUD para el registro de tareas--------------
 router.post('/addTarea', crud.addTarea)
+router.post('/addBitacora', crud.addBitacora)
 module.exports = router;

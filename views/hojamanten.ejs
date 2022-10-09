@@ -61,6 +61,8 @@
                         <div class="col">
                             <label for="names">Fecha:</label>
                             <input type="text" id="names" placeholder="<%= tarea.fecha_asignacion %>" readonly>
+                            <label for="names">N° Reporte:</label>
+                            <input id="reporte" placeholder="<%= tarea.id_asignacion %>" readonly>
                         </div>
                       </div>
                       <!--DESCRIPCIÓN DEL ASCENSOR-->
@@ -101,8 +103,9 @@
                     </select>                    
                     <br>
                     <br>
-                    <a href="#"><input type="button" value="Enviar Estado" id="btnSend"></a>
-                    
+                    <div class="modal-footer">
+                     <input type="submit" class="btn btn-success" value="Enviar estado">
+                    </div>
                 </div>
             </form>
     
