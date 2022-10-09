@@ -34,19 +34,21 @@
 
 </nav>
 
-<!---->
+<!--BITACORA-->
+
 
 <div class="content">
 
         <section class="form_wrap">
-    
+          <% if (tarea) { %>
             <section class="cantact_info">
                 <section class="info_title">
                     <span class="bi bi-person-video3"></span>
-                    <h2>Tecnico<br>Julian Alvarez </h2>
+                    <h2>Tecnico<br><%= tarea.nombres %></h2><br>
+                    <h2><%= tarea.apellidos %> </h2>
                 </section>
                 <section class="info_items">
-                    <p><span class="bi bi-geo-alt"></span> CONJUNTO RESIDENCIA TAL <br> Sector: Tal </p>
+                    <p><span class="bi bi-geo-alt"></span> <%= tarea.nombre_lugar %> <br> Sector:  <%= tarea.nombre_sector %> </p>
                 </section>
             </section>
     
@@ -58,17 +60,17 @@
                     <div class="row">
                         <div class="col">
                             <label for="names">Fecha:</label>
-                            <input type="text" id="names" placeholder="18/06/2022">
+                            <input type="text" id="names" placeholder="<%= tarea.fecha_asignacion %>" readonly>
                         </div>
                       </div>
                       <!--DESCRIPCIÓN DEL ASCENSOR-->
                       <h5><b>Descripción del ascensor:</b></h5>
                       <hr>
-             
                       <br>
                       <label for="phone">Descripción Detallada del equipo:</label>
-                      <textarea name="" id="" cols="20" rows="10"></textarea>
+                      <textarea name="" id="" cols="20" rows="10" readonly><%= tarea.descripcion_ascensor %></textarea>
                       
+                      <% } %>
                       <!--MANTENIMIENTO PREVENTIVO-->
 
                       <h5><b>Mantenimiento preventivo:</b> </h5>
