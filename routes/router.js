@@ -23,7 +23,15 @@ router.get("/clientes", (req, res) => {
 });
 
 router.get("/indexTec", (req, res) => {
-  res.render("indexTec");
+  conexion.query('SELECT ascensor.id_ascensor, asignacion_fallos.fecha_asignacion, ascensor.nombre_lugar, estado_fallos.nombre_estado,  ascensor.observacion, sector.nombre_sector , persona.nombres, persona.apellidos from ascensor INNER JOIN persona ON persona.id_persona = ascensor.id_persona INNER JOIN asignacion_fallos ON asignacion_fallos.id_asignacion_fallos = ascensor.id_asignacion INNER JOIN estado_fallos ON estado_fallos.id_estado_fallos = asignacion_fallos.id_estado inner join sector ON sector.id_sector = ascensor.id_sector;', (error, result) => {
+    if (error) throw error;
+    res.render("indexTec", {
+      result: result,
+    
+    });
+  })
+
+
 });
 
 router.get("/hojamanten", (req, res) => {
@@ -83,7 +91,7 @@ router.get("/tareas", (req, res) => { //consulta de las tareas
   conexion.query('SELECT ascensor.id_ascensor, ascensor.nombre_lugar, ascensor.descripcion_ascensor, asignacion_fallos.fecha_asignacion, persona.direccion, sector.nombre_sector , persona.nombres, persona.apellidos, ascensor.observacion, estado_fallos.nombre_estado from ascensor INNER JOIN persona ON persona.id_persona = ascensor.id_persona INNER JOIN asignacion_fallos ON asignacion_fallos.id_asignacion_fallos = ascensor.id_asignacion INNER JOIN estado_fallos ON estado_fallos.id_estado_fallos = asignacion_fallos.id_estado inner join sector ON sector.id_sector = ascensor.id_sector;', (error, result) => {
     if (error) throw error;
     conexion.query('select persona.id_persona, persona.nombres, persona.apellidos from persona where (id_rol = 2);', (error, tecnicos) => {
-     // console.log(tecnicos) 
+      // console.log(tecnicos) 
       if (error) throw error;
       res.render('tareas', {
         result: result,

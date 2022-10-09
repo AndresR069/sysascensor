@@ -65,50 +65,10 @@
                             <input type="text" id="phone" placeholder="1">
                         </div>
                       </div>
-                      <!--DATOS DEL CONJUNTO-->
-                      <h5> <b> Datos Conjunto Residencial: </b></h5>
-                      <hr>
-                      <br>
-                      <div class="row">
-                        <div class="col">
-                            <label for="names">Nombre Conjunto:</label>
-                            <input type="text" id="names" placeholder="CONJUNTO RESIDENCIAL TAL">
-                        </div>
-                        <div class="col">
-                            <label for="phone">Dirección:</label>
-                            <input type="text" id="phone" placeholder="CARRAR 22 # 20 - 2">
-                        </div>
-                      </div>
-                      <!--DATOS DEL TECNICO-->
-                      <h5><b>Datos Tecnico Encargado:</b></h5>
-                      <hr>
-    
-                      <br>
-                      <div class="row">
-                        <div class="col">
-                            <label for="names">Nombre Tecnico:</label>
-                            <input type="text" id="names" placeholder="Julian Alvarez">
-                        </div>
-                        <div class="col">
-                            <label for="phone">Telefono:</label>
-                            <input type="text" id="phone" placeholder="3050653233">
-                        </div>
-                      </div>
                       <!--DESCRIPCIÓN DEL ASCENSOR-->
                       <h5><b>Descripción del ascensor:</b></h5>
                       <hr>
-                      
-                      <br>
-                      <div class="row">
-                        <div class="col">
-                            <label for="names">No. Ascensor</label>
-                            <input type="text" id="names" placeholder="j1234">
-                        </div>
-                        <div class="col">
-                            <label for="phone">Modelo:</label>
-                            <input type="text" id="phone" placeholder="QWERT1234">
-                        </div>
-                      </div>
+             
                       <br>
                       <label for="phone">Descripción Detallada del equipo:</label>
                       <textarea name="" id="" cols="20" rows="10"></textarea>
@@ -120,17 +80,10 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                            <label for="names">Revisión 1:</label>
-                            <input type="text" id="names" placeholder="1">
+                            <label for="names">Revisión:</label>
+                            <textarea id="mensaje" cols="20" rows="10" ></textarea>
                         </div>
-                        <div class="col">
-                            <label for="phone">Revisión 2:</label>
-                            <input type="text" id="phone" placeholder="2">
-                        </div>
-                        <div class="col">
-                            <label for="phone">Revisión 3:</label>
-                            <input type="text" id="phone" placeholder="3">
-                        </div>
+                        
                       </div>
 
                       <!--MANTENIMINETO CORRECTIVO -->
@@ -138,20 +91,17 @@
                       <h5><b>Mantenimiento correctivo: </b></h5>
                       <hr>
 
-                    <label for="email">Observación / Fallo:</label>
+                    <label for="email">Observación post  Mantenimiento:</label>
                     <textarea id="mensaje" cols="20" rows="10" ></textarea>
             
                     <label>Situación del mantenimiento:</label>
                     <select name="Ubicacion" class="form-control">
-                        <option value="C01">Seleccione:</option>
-                        <option value="C02">ARREGLADO EXITOSAMENTE</option>
+                      <option value="C04">POSPONER MANTENIMINETO</option>
                         <option value="C03">NO SE PUEDE ARREGLAR</option>
-                        <option value="C04">POSPONER MANTENIMINETO</option>
+                        <option value="C02">ARREGLADO EXITOSAMENTE</option>
+                       
                     </select>                    
                     <br>
-
-                    <label for="names">Nombre Tecnico Encargado:</label>
-                    <input type="text" id="names" placeholder="Julian Alvarez">
                     <br>
                     <a href="#"><input type="button" value="Enviar Estado" id="btnSend"></a>
                     
