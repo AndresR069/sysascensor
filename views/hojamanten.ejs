@@ -52,7 +52,7 @@
                 </section>
             </section>
     
-            <form action="" class="form_contact">
+            <form action="/addBitacora" method="POST" class="form_contact">
                 <h2>Bitacorá de Mantenimiento Ascensor:</h2>
                 <div class="user_info">
 
@@ -79,7 +79,7 @@
                       <div class="row">
                         <div class="col">
                             <label for="names">Revisión:</label>
-                            <textarea id="mensaje" cols="20" rows="10" ></textarea>
+                            <textarea id="mensaje" name="mensaje" cols="20" rows="10" ></textarea>
                         </div>
                         
                       </div>
@@ -90,13 +90,13 @@
                       <hr>
 
                     <label for="email">Observación post  Mantenimiento:</label>
-                    <textarea id="mensaje" cols="20" rows="10" ></textarea>
+                    <textarea id="postMantenimiento" name="postMantenimiento" cols="20" rows="10" ></textarea>
             
                     <label>Situación del mantenimiento:</label>
-                    <select name="Ubicacion" class="form-control">
-                      <option value="C04">POSPONER MANTENIMINETO</option>
-                        <option value="C03">NO SE PUEDE ARREGLAR</option>
-                        <option value="C02">ARREGLADO EXITOSAMENTE</option>
+                    <select id="situacion" name="situacion" class="form-control">
+                      <option value="POSPONER MANTENIMINETO">POSPONER MANTENIMINETO</option>
+                        <option value="NO SE PUEDE ARREGLAR">NO SE PUEDE ARREGLAR</option>
+                        <option value="ARREGLADO EXITOSAMENTE">ARREGLADO EXITOSAMENTE</option>
                        
                     </select>                    
                     <br>
