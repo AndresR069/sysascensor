@@ -99,10 +99,9 @@
               <%= tarea.apellidos %>
           </td>
           <td>
-            <a href="/hojamanten" class="edit" data-toggle="modal"><button type="button"
-                class="btn btn-success">Aceptar</button></a>
-            <!--<button type="button" class="btn btn-success">Aceptar</button>-->
-            <button type="button" class="btn btn-danger">Rechazar</button>
+            <a href="/hojamanten/<%= tarea.id_ascensor %>" class="edit" data-toggle="modal"><button type="button"
+                class="btn btn-success">Ir</button></a>
+           
           </td>
         </tr>
         <% }) %>
