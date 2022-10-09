@@ -78,7 +78,7 @@ CREATE TABLE `asignacion_fallos` (
 
 LOCK TABLES `asignacion_fallos` WRITE;
 /*!40000 ALTER TABLE `asignacion_fallos` DISABLE KEYS */;
-INSERT INTO `asignacion_fallos` VALUES (1,'2000-10-00',1),(35241,'2022-9-8',1),(35276,'2022-09-08',3),(49125,'2022-09-08',1),(49404,'2022-9-8',1),(49423,'2022-09-08',1),(56238,'2022-9-8',1),(60403,'2022-9-8',1);
+INSERT INTO `asignacion_fallos` VALUES (1,'2000-10-00',1),(35241,'2022-9-8',1),(35276,'2022-09-08',3),(49125,'2022-09-08',1),(49404,'2022-9-8',1),(49423,'2022-09-08',1),(56238,'2022-9-8',1),(60403,'2022-9-8',2);
 /*!40000 ALTER TABLE `asignacion_fallos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `bitacora` (
   PRIMARY KEY (`id_bitacora`),
   KEY `fk_situa_mantenimiento_idx` (`id_situacion_mantenimiento`),
   CONSTRAINT `fk_situa_mantenimiento` FOREIGN KEY (`id_situacion_mantenimiento`) REFERENCES `situacion_mantenimiento` (`id_situacion_mantenimiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,6 +107,7 @@ CREATE TABLE `bitacora` (
 
 LOCK TABLES `bitacora` WRITE;
 /*!40000 ALTER TABLE `bitacora` DISABLE KEYS */;
+INSERT INTO `bitacora` VALUES (1,'2022-9-8','ggggggggggggggg','ggggggggggggg',1),(2,'2022-9-8','dffffffffffffff','dffsssssssssssssssssssssssss',2),(3,'2022-9-8','v','v',1);
 /*!40000 ALTER TABLE `bitacora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-08 21:33:52
+-- Dump completed on 2022-10-08 22:04:15
