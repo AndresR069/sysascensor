@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: sysascensor
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,7 +40,7 @@ CREATE TABLE `ascensor` (
   CONSTRAINT `fk_id_bitacora` FOREIGN KEY (`id_bitacora`) REFERENCES `bitacora` (`id_bitacora`),
   CONSTRAINT `fk_id_persona` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_id_sector` FOREIGN KEY (`id_sector`) REFERENCES `sector` (`id_sector`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `ascensor` (
 
 LOCK TABLES `ascensor` WRITE;
 /*!40000 ALTER TABLE `ascensor` DISABLE KEYS */;
-INSERT INTO `ascensor` VALUES (3,'fff','f',_binary 'v',30,1,49125,NULL),(9,'ll','ll',_binary 'll',30,1,49423,NULL),(11,'c','vv',_binary 'vvv',30,2,56238,NULL),(12,'','',_binary 'd',30,1,49404,NULL),(13,'perrq','bitch',_binary 'ffffdd',30,4,35241,NULL);
+INSERT INTO `ascensor` VALUES (3,'MULTIFAMILIAR MIRADOR DE KATALEYA','CRA 5 #19-72',_binary 'v',30,1,49125,NULL),(9,'TORRES DE BALMORAL','CALLE 22 # 10 - 22',_binary 'll',33,1,49423,NULL),(11,'CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2','CALLE 23 #64A - 72',_binary 'vvv',30,2,56238,NULL),(12,'CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3','CALLE 21 #64A - 80',_binary 'd',33,1,49404,NULL),(13,'MULTIFAMILIAR ARAUCARIA','CALLE 16 # 12-18 ',_binary 'ffffdd',30,4,35241,NULL),(14,'CONJUNTO CERRADO URBANIZACION BRISAS DE MIRAMONTE','CALLE 24B ',NULL,33,3,NULL,NULL),(15,'LAS HELICONIAS','CRA 62 #19 - 44',NULL,30,1,NULL,NULL),(16,'CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1','CALLE 22A #13 - 119',NULL,30,4,NULL,NULL),(17,'MULTIFAMILIARES EL PORTAL DE LA PAMPA V.I.S.','CALLE 25 #74-63',NULL,33,2,NULL,NULL),(18,'MULTIFANILIAR VILLA LAURA','CALLE 16A # 16 - 24',NULL,33,1,NULL,NULL),(19,'KADY','CARRERA 2 ESTE #9 - 58',NULL,33,5,NULL,NULL);
 /*!40000 ALTER TABLE `ascensor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `bitacora` (
   PRIMARY KEY (`id_bitacora`),
   KEY `fk_situa_mantenimiento_idx` (`id_situacion_mantenimiento`),
   CONSTRAINT `fk_situa_mantenimiento` FOREIGN KEY (`id_situacion_mantenimiento`) REFERENCES `situacion_mantenimiento` (`id_situacion_mantenimiento`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `bitacora` (
 
 LOCK TABLES `bitacora` WRITE;
 /*!40000 ALTER TABLE `bitacora` DISABLE KEYS */;
-INSERT INTO `bitacora` VALUES (1,'2022-9-8','ggggggggggggggg','ggggggggggggg',1),(2,'2022-9-8','dffffffffffffff','dffsssssssssssssssssssssssss',2),(3,'2022-9-8','v','v',1);
+INSERT INTO `bitacora` VALUES (1,'2022-9-8','ggggggggggggggg','ggggggggggggg',1),(2,'2022-9-8','dffffffffffffff','dffsssssssssssssssssssssssss',2),(3,'2022-9-8','v','v',1),(4,'2022-9-9','','',3),(5,'2022-9-9','','',3);
 /*!40000 ALTER TABLE `bitacora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +155,7 @@ CREATE TABLE `persona` (
   PRIMARY KEY (`id_persona`),
   KEY `fk_rol_idx` (`id_rol`),
   CONSTRAINT `fk_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +164,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (23,'Kevin David','Bautista','kevinrocha239@gmial.com','carrera','$2a$08$nCMftEMALFuADj0i8ZmBNucYn4OkoMHXbGeX8iKfl8g6y9lNhbc0e',0,1,'(310) 818-0061'),(30,'juan','rodriguez','carm_0987@hotmail.com','calle 2','$2a$08$u1KT1KGJXYJtiryfkO0bJ.A2tGsE07eGkEo4UnfMwwfEDPWA6FKNG',0,2,'3184351669');
+INSERT INTO `persona` VALUES (23,'Oscar','Sarmiento','oscar@gmail.com','carrera','$2a$08$nCMftEMALFuADj0i8ZmBNucYn4OkoMHXbGeX8iKfl8g6y9lNhbc0e',0,1,'3184351669'),(30,'Tecnico','Lopez','tecnico@gmail.com','calle 2','$2a$08$u1KT1KGJXYJtiryfkO0bJ.A2tGsE07eGkEo4UnfMwwfEDPWA6FKNG',0,2,'3184351669'),(32,'usuario','user','usuario@gmail.com','carrera','$2a$08$jIdnH/q3g01G6PSEk1hFNuZsaZF23tVYhM4hz8dThraM9yAI0pTNi',0,3,'3001010022'),(33,'Tecnico 2','Lola','tecnico2@gmail.com','carrera','$2a$08$avXqssZUFmvqoL.rqjUIRe3y2hea9kJTTsFDkToSrNQ7QlfbJAWU6',0,2,'3102320023');
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-08 22:04:15
+-- Dump completed on 2022-10-09 10:14:33
