@@ -54,7 +54,7 @@
         <section class="cantact_info">
           <section class="info_title">
             <span class="fa fa-user-circle"></span>
-            <h2>Santiago Peña<br />Administrador Conjunto</h2>
+            <h2>Administrador Conjunto</h2>
           </section>
           <section class="info_items">
             <p><span class="bi bi-geo-alt"></span> CONJUNTO RESIDENCIAL</p>
@@ -70,12 +70,29 @@
             <label for="phone">Ascensor:</label>
             <input type="text" id="phone" placeholder="1" />
 
-            <label for="email">Observación / Fallo:</label>
-            <textarea id="mensaje" placeholder="Descripción"></textarea>
+            <div class="form-group">
+              <label>Observación / Fallo:</label>
+              <select id="fallo" name="rol" class="form-control">
+                <option value="Eliga">Eliga:</option>
+                <option value="falla1">
+                  ASCENSOR BARADO Y PERSONA ENCERRADA CON LUZ NORMAL
+                </option>
+                <option value="falla2">
+                  ASCENSOR BARADO CON PERSONA ENCERRADA SIN LUZ
+                </option>
+                <option value="falla3">
+                  ASCENSOR ABRE Y CIERRA PUERTAS NO FUNCIONA
+                </option>
+                <option value="falla4">
+                  ASCENSOR NO PARA EN PISO INDICADO
+                </option>
+                <option value="falla5">ASCENSOR NO MARCA LOS PISOS</option>
+                <option value="falla6">ASCENSOR SIN LUZ</option>
+              </select>
+            </div>
 
-            <!-- <label for="names">Nombre Administrador Conjunto:</label>
-            <input type="text" id="names" placeholder="NOMBRE" /> -->
-
+            <br />
+            <br />
             <a href="#"
               ><input type="button" value="Enviar Notificación" id="btnSend"
             /></a>

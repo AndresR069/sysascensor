@@ -12,54 +12,83 @@ const map = new mapboxgl.Map({
 const chapters = {
   1: {
     bearing: 27,
-    center: [-74.3665413, 4.3300473],
+    center: [-74.3665299, 4.3300493],
     zoom: 15.5,
     pitch: 20,
   },
   2: {
-    // duration: 6000,
-    // center: [-74.4111043, 4.3264071],
-    // bearing: 150,
-    // zoom: 15,
-    // pitch: 0,
-
     duration: 6000,
     bearing: 27,
-    center: [-74.4111043, 4.3264071],
+    center: [-74.3704877, 4.3301063],
     zoom: 15.5,
     pitch: 20,
   },
   3: {
-    // bearing: 90,
-    // center: [-74.4079633, 4.3283679],
-    // zoom: 13,
-    // speed: 0.6,
-    // pitch: 40,
     duration: 6000,
     bearing: 27,
-    center: [-74.4079633, 4.3283679],
+    center: [-74.4077949, 4.3254632],
     zoom: 15.5,
     pitch: 20,
   },
   4: {
-    // bearing: 90,
-    // center: [-74.4075569, 4.3295705],
-    // zoom: 12.3,
     duration: 6000,
     bearing: 27,
-    center: [-74.4075569, 4.3295705],
+    center: [-74.4079625, 4.328368],
     zoom: 15.5,
     pitch: 20,
   },
   5: {
-    // bearing: 45,
-    // center: [-74.3748373, 4.3329439],
-    // zoom: 15.3,
-    // pitch: 20,
-    // speed: 0.5,
     duration: 6000,
     bearing: 27,
-    center: [-74.3748373, 4.3329439],
+    center: [-74.3661865, 4.3387761],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  6: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.3652779, 4.3231539],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  7: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.3985085, 4.331261],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  8: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.4046497, 4.3266667],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  9: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.3658937, 4.3251099],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  10: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.371529, 4.3406173],
+    zoom: 15.5,
+    pitch: 20,
+  },
+
+  11: {
+    duration: 6000,
+    bearing: 27,
+    center: [-74.3588279, 4.3445312],
     zoom: 15.5,
     pitch: 20,
   },
@@ -67,27 +96,58 @@ const chapters = {
 
 // Ubicacion conjunto : MULTIFAMILIAR MIRADOR DE KATALEYA
 const marker1 = new mapboxgl.Marker()
-  .setLngLat([-74.3665413, 4.3300473])
+  .setLngLat([-74.3665299, 4.3300493])
+  .addTo(map);
+
+// Ubicacion conjunto : TORRES DE BALMORAL
+
+const marker2 = new mapboxgl.Marker()
+  .setLngLat([-74.3704877, 4.3301063])
   .addTo(map);
 
 // Ubicacion conjunto : CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2
-const marker2 = new mapboxgl.Marker()
-  .setLngLat([-74.4111043, 4.3264071])
+const marker3 = new mapboxgl.Marker()
+  .setLngLat([-74.4077949, 4.3254632])
   .addTo(map);
 
 // Ubicacion conjunto : CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3
-const marker3 = new mapboxgl.Marker()
-  .setLngLat([-74.4079633, 4.3283679])
+const marker4 = new mapboxgl.Marker()
+  .setLngLat([-74.4079625, 4.328368])
   .addTo(map);
 
-// Ubicacion conjunto : CONJUNTO RESIDENCIAL LAS HELICONIAS
-const marker4 = new mapboxgl.Marker()
-  .setLngLat([-74.4075569, 4.3295705])
+// Ubicacion conjunto : CONJUNTO ARACAURIA
+const marker5 = new mapboxgl.Marker()
+  .setLngLat([-74.3661865, 4.3387761])
+  .addTo(map);
+
+// Ubicacion conjunto : CONJUNTO CERRADO URBANIZACION BRISAS DE MIRAMONTE
+const marker6 = new mapboxgl.Marker()
+  .setLngLat([-74.3652779, 4.3231539])
+  .addTo(map);
+
+// Ubicacion conjunto : CONJUNTO LAS HELICONIAS
+const marker7 = new mapboxgl.Marker()
+  .setLngLat([-74.3985085, 4.331261])
   .addTo(map);
 
 // Ubicacion conjunto : CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1
-const marker5 = new mapboxgl.Marker()
-  .setLngLat([-74.3748373, 4.3329439])
+const marker8 = new mapboxgl.Marker()
+  .setLngLat([-74.4046497, 4.3266667])
+  .addTo(map);
+
+// Ubicacion conjunto : MULTIFAMILIARES EL PORTAL DE LA PAMPA V.I.S.
+const marker9 = new mapboxgl.Marker()
+  .setLngLat([-74.3658937, 4.3251099])
+  .addTo(map);
+
+// Ubicacion conjunto : MULTIFANILIAR VILLA LAURA
+const marker10 = new mapboxgl.Marker()
+  .setLngLat([-74.371529, 4.3406173])
+  .addTo(map);
+
+// Ubicacion conjunto : CONJUNTO KADY
+const marker11 = new mapboxgl.Marker()
+  .setLngLat([-74.3588279, 4.3445312])
   .addTo(map);
 
 let activeChapterName = "baker";
