@@ -156,91 +156,7 @@
       <!--Tarjetas de info-->
 
       <main>
-        <!--RELOJ-->
-        <!-- <div>
-          <style>
-            #reloj {
-              font-family: sans-serif;
-              font-size: 60px;
-              text-shadow: 0px 0px 1px #333;
-            }
-
-            .reloj-contenedor {
-              background-color: rgb(12, 119, 206);
-              color: #fff;
-              max-width: 350px;
-              text-align: center;
-              border-radius: 10px;
-              margin: 0 auto;
-            }
-
-            #fecha {
-              letter-spacing: 10px;
-              font-size: 15px;
-            }
-          </style>
-
-          <div id="reloj">
-            <div class="reloj-contenedor" id="contenedor">
-              <div id="hora">00:00:00</div>
-              <div id="fecha">00/00/00</div>
-            </div>
-          </div>
-
-          <script>
-            const horaDiv = document.querySelector("#hora");
-            const fechaDiv = document.querySelector("#fecha");
-
-            // Funcion para tomar la hora actual e imprimirlo en HTML
-            const mostrarReloj = () => {
-              let fecha = new Date();
-              let hora = formatoHora(fecha.getHours());
-              let minuto = formatoHora(fecha.getMinutes());
-              let segundo = formatoHora(fecha.getSeconds());
-              horaDiv.innerHTML = `${hora}:${minuto}:${segundo}`;
-
-              // Arreglos que almacenan los nombres de las fechas en español
-
-              const meses = [
-                "Ene",
-                "Feb",
-                "Mar",
-                "Abr",
-                "May",
-                "Jun",
-                "Jul",
-                "Ago",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dic",
-              ];
-              const dias = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
-
-              let diaSemana = dias[fecha.getDay()];
-              let dia = fecha.getDate();
-              let mes = meses[fecha.getMonth()];
-
-              let fechaTexto = `${diaSemana}, ${dia} ${mes}`;
-
-              fechaDiv.innerHTML = fechaTexto;
-            };
-
-            // Le añade un cero a una unidad de tiempo inferior a 10 ya que por defecto solo devuelve el valor sin el 0 como formato
-            const formatoHora = (tiempo) => {
-              if (tiempo < 10) {
-                tiempo = `0${tiempo}`;
-              }
-              return tiempo;
-            };
-
-            // Cuando se carga la página se ejecuta la función de reloj cada segundo
-            window.onload = () => {
-              setInterval(mostrarReloj, 1000);
-            };
-          </script>
-        </div> -->
-        <!--FIN DE RELOJ-->
+        
 
         <div class="cards">
           <div class="card-single">
@@ -404,43 +320,74 @@
                 
 <div id="map"></div>
 <div id="features">
+
     <section id="1" class="active">
             <h3>MULTIFAMILIAR MIRADOR DE KATALEY</h3>
-                <h4>Direccion: CRA 5 #19-72 </h4>
-                    <!-- <p>
-                      Observación: Inspeccion de ascensor por variaciones en el fluido electrico
-                    </p> -->
+                <h4>Dirección: CRA 5 #19-72 </h4>
+                <h4>Ascensores: 1 </h4>
     </section>
-    <section id="2">
-            <h3>CON JUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2</h3>
-                <h4>Direccion: CALLE 23 #64A - 72 </h4>
-                    <!-- <p>
-                      Observación: Por constantes picos en el fluido electrico fue necesario reemplazar fuente de 24 voltios en la torre 1, 
-                        en la torre 2 se reemplazaron 2 (dos) inductores de 24 voltios ya que el ascensor no paraba en los pisos indicados 
-                    </p> -->
+
+    <section id="2" class="active">
+      <h3>TORRES DE BALMORAL</h3>
+          <h4>Dirección: CALLE 22 # 9 - 2 </h4>
+          <h4>Ascensores: 1 </h4>
     </section>
+    
     <section id="3">
-            <h3>CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3</h3>
-                <h4>Direccion: CALLE 21 #64A - 80</h4>
-                    <!-- <p>
-                      Observación: Fue necesario instalar un ARD (sistema de rescate de emergencia) por los multiples cortes de energia.
-                    </p> -->
+            <h3>CON JUNTO RESIDENCIAL PARQUE LOS CAMBULOS I - TORRE 1 Y 2</h3>
+                <h4>Dirección: CALLE 23 #64A - 72 </h4>
+                <h4>Ascensores: 1 </h4>
     </section>
+
     <section id="4">
-            <h3>CONJUNTO LAS HELICONIAS</h3>
-                <h4>Direccion: CRA 62 #19 - 44 </h4>
-                    <!-- <p>
-                      Observación: Para la eliminacion de ruidos en el cierre y apertura de las puertas de cabina fue necesario cambiar los rodamientos del motor de este operador de puertas.
-                    </p> -->
+            <h3>CONJUNTO RESIDENCIAL PARQUE LOS CAMBULOS III - TORRE 3</h3>
+                <h4>Dirección: CALLE 21 #64A - 80</h4>
+                <h4>Ascensores: 2 </h4>
     </section>
+
     <section id="5">
-            <h3>CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1</h3>
-                <h4>Direccion: CALLE 22A #13 - 119 </h4>
-                  <!-- <p>Torre A: Cambio de retenedor por fugas de aceite lubricante del motor.</p>
-                  <p>Torre B: Reparacion de limitador de velocidad por tiempo de uso</p>
-                  <p>Torre C:instalacion de bateria de emergencia nueva de 24 voltios. </p> -->
+      <h3>MULTIFAMILIAR ARAUCARIA</h3>
+          <h4>Dirección: CALLE 16 # 12-18  </h4>
+          <h4>Ascensores: 1 </h4>
     </section>
+
     <section id="6">
+      <h3>CONJUNTO CERRADO URBANIZACION BRISAS DE MIRAMONTE</h3>
+          <h4>Dirección: CALLE 27 #35-75 </h4>
+          <h4>Ascensores: 1 </h4>
+    </section>
+
+    <section id="7">
+            <h3>CONJUNTO LAS HELICONIAS</h3>
+                <h4>Dirección: CRA 62 #19 - 44 </h4>
+                <h4>Ascensores: 1 </h4>
+    </section>
+
+    <section id="8">
+            <h3>CONJUNTO RESIDENCIAL TORRES DE SANTA ANA No. 1</h3>
+                <h4>Dirección: CALLE 22A #13 - 119 </h4>  
+                <h4>Ascensores: 3 </h4>  
+    </section>
+
+    <section id="9">
+      <h3>MULTIFAMILIARES EL PORTAL DE LA PAMPA V.I.S.</h3>
+          <h4>Dirección: CALLE 25 #74-63 </h4>
+          <h4>Ascensores: 5 </h4>  
+  </section>
+
+    <section id="10">
+    <h3>MULTIFANILIAR VILLA LAURA</h3>
+      <h4>Dirección: CALLE 16A # 16 - 24 </h4>
+      <h4>Ascensores: 1 </h4>  
+    </section>
+
+    <section id="11">
+      <h3>CONJUNTO KADY</h3>
+        <h4>Dirección: CARRERA 2 ESTE #9 - 58 </h4>
+        <h4>Ascensores: 1 </h4>  
+      </section>
+
+    <section id="12">
       <a href="/index" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> <span>SALIR</span></a>
     </section>
   </div>
